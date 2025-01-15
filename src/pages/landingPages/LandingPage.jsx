@@ -98,11 +98,6 @@ export const LandingPage = ({ page }) => {
           }}
           className="react-player left-0 top-0 absolute object-cover h-full w-full"
         />
-        {/* <img
-          src={isWebDevelopment ? webDevBanner : appDevBanner}
-          className="w-full h-full object-cover object-right absolute"
-          alt=""
-        /> */}
         <div className="bg-black/50 absolute w-full h-full"></div>
         <div
           data-aos="fade-up"
@@ -118,7 +113,7 @@ export const LandingPage = ({ page }) => {
               </h1>
             ) : (
               <h1 className="heading-1 text-white leading-tight">
-                Building Websites That Work for You
+                Building Mobile Apps That Work for You
               </h1>
             )}
             <p className="text-white desc font-medium">
