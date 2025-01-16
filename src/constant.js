@@ -112,11 +112,11 @@ export {
 
 // company details
 export const companyDetails = {
-  phone: "+918890131500",
-  whatsapp: "+918890131500",
-  whatsappbox: "+918890131500",
-  email: "abc@example.com",
-  address: "Bairwa Basti Nayapura Anta, Dist. Baran, Rajasthan, 325202, India",
+  phone: "+918209806989",
+  whatsapp: "+918209806989",
+  whatsappbox: "+918209806989",
+  email: "gulnazion.technologies@gmail.com",
+  address: "Aerodrome Circle Kota Rajasthan 324006, India",
 };
 
 // website routes
