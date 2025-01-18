@@ -67,12 +67,8 @@ const WebsiteFooter = () => {
         <div className="pt-4 mt-7 border-t text-gray-500 border-primary w-full">
           <div className="flex justify-center gap-5 w-full">
             <div className="flex gap-5 items-center mt-5">
-              <Link>
-                <BsInstagram
-                  target="_blank"
-                  to={companyDetails.instagram}
-                  className="text-xl text-gray-200 hover:text-primary transition-all duration-300"
-                />
+              <Link target="_blank" to={companyDetails.instagram}>
+                <BsInstagram className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
               <Link>
                 <BsFacebook className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
