@@ -117,6 +117,8 @@ export const companyDetails = {
   whatsappbox: "+918209806989",
   email: "gulnazion.technologies@gmail.com",
   address: "Aerodrome Circle Kota Rajasthan 324006, India",
+  instagram:
+    "https://www.instagram.com/gulnazion_ai_tech?igsh=MXFqZXVubXdkZmdkbg==",
 };
 
 // website routes

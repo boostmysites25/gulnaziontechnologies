@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFacebook, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
 import { Link as ScrollLink } from "react-scroll";
 import { companyDetails, logoImg } from "../../constant";
 import { Link } from "react-router-dom";
@@ -94,6 +94,13 @@ const LandingFooter = () => {
           <div className="flex justify-center gap-5 w-full">
             <div className="flex gap-5 items-center mt-5">
               <Link>
+                <BsInstagram
+                  target="_blank"
+                  to={companyDetails.instagram}
+                  className="text-xl text-gray-200 hover:text-primary transition-all duration-300"
+                />
+              </Link>
+              <Link>
                 <BsFacebook className="text-xl text-white hover:text-primary transition-all duration-300" />
               </Link>
               <Link>
@@ -101,9 +108,6 @@ const LandingFooter = () => {
               </Link>
               <Link>
                 <BsLinkedin className="text-xl text-white hover:text-primary transition-all duration-300" />
-              </Link>
-              <Link>
-                <BsYoutube className="text-xl text-white hover:text-primary transition-all duration-300" />
               </Link>
             </div>
           </div>

@@ -1,5 +1,11 @@
 import React from "react";
-import { BsFacebook, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsLinkedin,
+  BsTwitter,
+  BsYoutube,
+} from "react-icons/bs";
 import { companyDetails, logoImg, routes } from "../../constant";
 import { Link } from "react-router-dom";
 
@@ -62,6 +68,13 @@ const WebsiteFooter = () => {
           <div className="flex justify-center gap-5 w-full">
             <div className="flex gap-5 items-center mt-5">
               <Link>
+                <BsInstagram
+                  target="_blank"
+                  to={companyDetails.instagram}
+                  className="text-xl text-gray-200 hover:text-primary transition-all duration-300"
+                />
+              </Link>
+              <Link>
                 <BsFacebook className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
               <Link>
@@ -69,9 +82,6 @@ const WebsiteFooter = () => {
               </Link>
               <Link>
                 <BsLinkedin className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
-              </Link>
-              <Link>
-                <BsYoutube className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
             </div>
           </div>
