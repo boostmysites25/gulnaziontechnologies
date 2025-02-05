@@ -9,7 +9,7 @@ import {
 import whyus1 from "../../assets/images/whyus1.jpg";
 import whyus2 from "../../assets/images/whyus2.jpg";
 const WhyChooseUs = () => {
-  const totalYrs = 3;
+  const totalYrs = 10;
   const totalOnTimeCompletionPercentage = 100;
   const totalExperts = 10;
   const totalClients = 50;
