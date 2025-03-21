@@ -10,12 +10,12 @@ import whyus1 from "../../assets/images/whyus1.jpg";
 import whyus2 from "../../assets/images/whyus2.jpg";
 const WhyChooseUs = () => {
   const totalYrs = 10;
-  const totalOnTimeCompletionPercentage = 100;
-  const totalExperts = 10;
-  const totalClients = 50;
+  const satisfiedClientsPercentage = 100;
+  const totalExperts = 15;
+  const totalClients = 150;
 
   const [yrs, setYrs] = useState(0);
-  const [onTimeCompletion, setOnTimeCompletion] = useState(0);
+  const [satisfiedClients, setSatisfiedClients] = useState(0);
   const [experts, setExperts] = useState(0);
   const [clients, setClients] = useState(0);
 
@@ -43,8 +43,8 @@ const WhyChooseUs = () => {
 
       // Animate On Time Completion Percentage
       const completionInterval = setInterval(() => {
-        setOnTimeCompletion((prev) =>
-          Math.min(prev + 1, totalOnTimeCompletionPercentage)
+        setSatisfiedClients((prev) =>
+          Math.min(prev + 1, satisfiedClientsPercentage)
         );
       }, 20);
 
@@ -230,10 +230,10 @@ const WhyChooseUs = () => {
             </div>
             <div className="w-full flex flex-col items-center justify-center">
               <div className="flex flex-col gap-3 relative w-fit">
-                <h1 className="heading-1">{onTimeCompletion}</h1>
+                <h1 className="heading-1">{satisfiedClients}</h1>
                 <span className="absolute top-1 -right-3 text-lg">%</span>
               </div>
-              <p className="font-medium mt-3">On Time Completion</p>
+              <p className="font-medium mt-3">Client Satisfaction</p>
             </div>
           </div>
         </div>
