@@ -191,7 +191,7 @@ export const LandingPage = ({ page }) => {
       </section>
 
       <LandingServices page={page} />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <UnlockEfficiency />
       <Portfolio page={page} />
       <Testimonials />

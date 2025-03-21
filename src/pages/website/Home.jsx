@@ -149,7 +149,7 @@ const Home = () => {
       </section>
       <CommonProject />
       {/* <Faqs /> */}
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <UnlockEfficiency />
       <Testimonials />
       <Credibility />
