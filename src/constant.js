@@ -138,11 +138,11 @@ export const routes = [
     path: "/about-us",
     component: <AboutUs />,
   },
-  {
-    name: "Blogs",
-    path: "",
-    component: "",
-  },
+  // {
+  //   name: "Blogs",
+  //   path: "",
+  //   component: "",
+  // },
   {
     name: "Contact Us",
     path: "/contact-us",
