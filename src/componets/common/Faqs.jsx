@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import { faqPng, faqs } from "../../constant";
 import { BiCaretDown, BiCaretRight } from "react-icons/bi";
+import faqImg from "../../assets/images/faq.png";
 
 const Faqs = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sm:py-[5rem] bg-backgroundcolor">
-      <div className="wrapper grid lg:grid-cols-2 gap-10 lg:gap-0 items-center">
-        <div className="lg:flex hidden items-end justify-end">
-          <div className="hover:scale-105 transition-all duration-500 bg-gradient-to-r min-w-[13rem] flex flex-col items-center text-white w-fit from-secondary/80 to-primary/80 rounded-xl p-5">
+    <div className="sm:py-[2rem] bg-backgroundcolor">
+      <div className="wrapper grid lg:grid-cols-[40%,1fr] gap-10 lg:gap-0 items-center">
+        <div className="lg:flex hidden items-end justify-center">
+          {/* <div className="hover:scale-105 transition-all duration-500 bg-gradient-to-r min-w-[13rem] flex flex-col items-center text-white w-fit from-secondary/80 to-primary/80 rounded-xl p-5">
             <div className="flex flex-col justify-center gap-3 relative w-fit">
               <h1 className="heading-2">10</h1>
               <span className="absolute top-1 -right-3 text-lg">+</span>
             </div>
             <p className="font-medium mt-3">Years of Experience</p>
-          </div>
-          <div className="h-full max-h-[32rem]">
+          </div> */}
+          <div className="h-full max-h-[25rem] translate-y-[3rem]">
             <img
-              src={faqPng}
-              className="h-full max-h-[32rem] object-contain hover:scale-105 transition-all duration-500"
+              src={faqImg}
+              className="h-full max-h-[25rem] object-contain hover:scale-105 transition-all duration-500"
               alt=""
             />
           </div>
