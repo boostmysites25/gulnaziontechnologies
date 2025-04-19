@@ -219,16 +219,22 @@ const ContactUs = () => {
         <div className="flex lg:col-span-2 gap-5 items-center text-primarytextcolor mb-1 mx-auto">
           <p>Follow Us On:</p>
           <div className="flex items-center gap-3">
-            <Link to={companyDetails.instagram} className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
+            <Link
+              to={companyDetails.instagram}
+              className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center"
+            >
               <BsInstagram className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
             </Link>
-            <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
+            {/* <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
               <BsFacebook className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
             </Link>
             <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
               <BsTwitter className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
-            </Link>
-            <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
+            </Link> */}
+            <Link
+              to={companyDetails.linkedIn}
+              className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center"
+            >
               <BsLinkedin className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
             </Link>
           </div>

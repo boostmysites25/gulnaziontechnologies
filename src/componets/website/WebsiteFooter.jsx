@@ -69,13 +69,13 @@ const WebsiteFooter = () => {
               <Link target="_blank" to={companyDetails.instagram}>
                 <BsInstagram className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
-              <Link>
+              {/* <Link>
                 <BsFacebook className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
               <Link>
                 <BsTwitter className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
-              </Link>
-              <Link>
+              </Link> */}
+              <Link to={companyDetails.linkedIn}>
                 <BsLinkedin className="text-xl text-gray-200 hover:text-primary transition-all duration-300" />
               </Link>
             </div>
