@@ -119,6 +119,7 @@ export const companyDetails = {
   address: "Aerodrome Circle Kota Rajasthan 324006, India",
   instagram:
     "https://www.instagram.com/gulnazion_ai_tech?igsh=MXFqZXVubXdkZmdkbg==",
+  linkedIn: "https://www.linkedin.com/company/gulnazion-technologies",
 };
 
 // website routes
