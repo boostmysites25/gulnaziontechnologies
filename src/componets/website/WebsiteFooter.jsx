@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 
 const WebsiteFooter = () => {
   return (
-    <div className="py-14 bg-[#260000]">
+    <div className="py-14 bg-[#26000085]">
       <div className="wrapper text-white">
         <div className="flex md:flex-row flex-col justify-between gap-10">
           <div className="flex flex-col items-center">
-            <img src={logoImg} className="h-[4rem]" alt="" />
+            <img src={logoImg} className="h-[6rem]" alt="" />
             <p className="desc md:max-w-[15rem] text-sm text-center mt-5">
               We have rapidly grown into a trusted partner for organizations
               seeking digital transformation, enhanced operational efficiency.

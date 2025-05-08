@@ -34,8 +34,8 @@ const WebsiteHeader = () => {
     <div
       className={`pt-3 pb-6 fixed top-0 w-full z-50 text-headertextcolor transition-all duration-300 ${
         isScrolled
-          ? "bg-[#260000] backdrop-blur-md text-white"
-          : "bg-[#260000] text-white"
+          ? "bg-white backdrop-blur-md text-black"
+          : "bg-white text-black"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
@@ -43,7 +43,7 @@ const WebsiteHeader = () => {
           <Link to="/">
             <img
               src={logoImg}
-              className="h-[2rem] md:h-[3rem] ml-5 scale-125"
+              className="h-[2rem] md:h-[4rem] ml-5 scale-125"
               alt="logo"
             />
           </Link>
