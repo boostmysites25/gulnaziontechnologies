@@ -162,3 +162,16 @@ body {
     border-image-slice: 1;
   }
 }
+
+
+.calendly-inline-widget{
+  min-width: 320px;
+  height: 630px;
+}
+
+@media (max-width: 768px){
+  .calendly-inline-widget{
+    min-width: 280px;
+    height: 345px;
+  }
+}

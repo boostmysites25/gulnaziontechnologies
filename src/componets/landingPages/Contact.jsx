@@ -29,15 +29,19 @@ const Contact = () => {
       to: companyDetails.email,
       subject: "You have a new message from Gulnazion Technologies",
       body: emailBody,
+      name: "Gulnazion Technologies",
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
+    await fetch(
+      "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    )
       .then((response) => response.json())
       .then((res) => {
         if (res.error) {
@@ -59,7 +63,6 @@ const Contact = () => {
     >
       <div className="wrapper  rounded-lg ">
         <div className="h-full grid md:grid-cols-2 gap-10 py-10">
-          {/* data-aos="fade-right" */}
           <div className="flex flex-col gap-4">
             <h2 className="heading-2">Let’s Begin Our Journey Together!</h2>
             <p className="">

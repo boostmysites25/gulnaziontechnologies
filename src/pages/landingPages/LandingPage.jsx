@@ -38,7 +38,6 @@ export const LandingPage = ({ page }) => {
     var emailBody = "Name: " + data.fullName + "\n\n";
     emailBody += "Email: " + data.email + "\n\n";
     emailBody += "Phone: " + data.mobileNumber + "\n\n";
-    // emailBody += "Subject: " + data.subject + "\n\n";
     emailBody += "Message:\n" + data.message;
 
     // Construct the request payload
@@ -46,9 +45,10 @@ export const LandingPage = ({ page }) => {
       to: companyDetails.email,
       subject: "You have a new message from [you company name]",
       body: emailBody,
+      name:"Gulnazion Technologies",
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
+    await fetch("https://send-mail-redirect-boostmysites.vercel.app/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

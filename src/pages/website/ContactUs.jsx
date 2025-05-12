@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { companyDetails } from "../../constant";
 import { IoMail } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 const MapComponent = lazy(() => import("../../componets/website/MapComponent"));
@@ -32,12 +32,12 @@ const ContactUs = () => {
     // Construct the request payload
     var payload = {
       to: companyDetails.email,
-      // to: "remeesreme4u@gmail.com",
       subject: "You have a new message from Gulnazion Technologies",
       body: emailBody,
+      name:"Gulnazion Technologies",
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
+    await fetch("https://send-mail-redirect-boostmysites.vercel.app/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -237,12 +237,6 @@ const ContactUs = () => {
             >
               <BsInstagram className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
             </Link>
-            {/* <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
-              <BsFacebook className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
-            </Link>
-            <Link className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center">
-              <BsTwitter className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
-            </Link> */}
             <Link
               to={companyDetails.linkedIn}
               className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center"
@@ -252,14 +246,29 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      {/* <div className="wrapper py-10">
-        <h2>Book a Slot with Our CEO</h2>
-        <div
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/mpranavprem/30min"
-          style={{ minWidth: "320px", height: "630px" }}
-        ></div>
-      </div> */}
+      <div className="wrapper mb-[3rem] py-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/5 to-primary/5 rounded-2xl"></div>
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-secondary/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="relative z-10 text-center mb-10" data-aos="fade-up">
+          <div className="gradient-rounded-text-box mx-auto mb-4">Schedule a Meeting</div>
+          <h2 className="heading-2 mb-4">Book a Consultation</h2>
+          <p className="desc max-w-2xl mx-auto">
+            Take the first step towards transforming your digital presence. Schedule a personalized consultation 
+            to discuss your project requirements and explore how we can help you achieve your goals.
+          </p>
+        </div>
+        
+        <div className="" data-aos="fade-up">
+          <div className="backdrop-blur-sm rounded-xl">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/gulnazion-technologies"
+            />
+          </div>
+        </div>
+      </div>
       <MapComponent />
     </>
   );
