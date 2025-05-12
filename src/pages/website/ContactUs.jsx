@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import Banner from "../../componets/website/Banner";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
@@ -58,6 +58,17 @@ const ContactUs = () => {
       })
       .finally(() => setSpinner(false));
   };
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <>
       <Banner page="Contact Us" />
@@ -68,6 +79,7 @@ const ContactUs = () => {
         >
           <div className="gradient-rounded-text-box">Contact Us</div>
           <h2 className="heading-2 mt-5">Reach Out to Us</h2>
+
           <p className="desc">
             Got a question or want to discuss a project? We’re here to help.
             Whether you’re looking to start a new venture, need support, or just
@@ -240,6 +252,14 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      {/* <div className="wrapper py-10">
+        <h2>Book a Slot with Our CEO</h2>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/mpranavprem/30min"
+          style={{ minWidth: "320px", height: "630px" }}
+        ></div>
+      </div> */}
       <MapComponent />
     </>
   );
