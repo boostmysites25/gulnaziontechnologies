@@ -32,9 +32,9 @@ const WebsiteHeader = () => {
 
   return (
     <div
-      className={`py-3 fixed top-0 w-full z-50 text-white transition-all duration-300 ${
+      className={`py-3 fixed backdrop-blur-md top-0 w-full z-50 text-white transition-all duration-300 ${
         isScrolled
-          ? "bg-primary/20 backdrop-blur-md text-white"
+          ? "bg-primary/20 text-white"
           : "bg-primary/20 text-white"
       }`}
     >
@@ -49,16 +49,24 @@ const WebsiteHeader = () => {
           </Link>
           <div className="lg:flex mt-7 items-center gap-10 hidden">
             {routes.map(({ name, path }) => (
-              <Link
-                to={`${path}`}
-                className={`link text-sm ${
-                  pathname === `${path}` && "active-link"
-                }`}
-                key={path}
-              >
-                {name}
-              </Link>
+              name !== "Book Consultation" ? (
+                <Link
+                  to={`${path}`}
+                  className={`link text-sm ${
+                    pathname === `${path}` && "active-link"
+                  }`}
+                  key={path}
+                >
+                  {name}
+                </Link>
+              ) : null
             ))}
+            <Link
+              to="/book-consultation"
+              className="text-white hover:text-white cursor-pointer font-light tracking-wide border bg-primary/60 border-primary hover:bg-primary text-sm hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-2 transition-all duration-300"
+            >
+              Book Consultation
+            </Link>
           </div>
         </div>
         <Drawer
@@ -77,15 +85,24 @@ const WebsiteHeader = () => {
           </div>
           <div className="flex flex-col gap-6">
             {routes.map(({ name, path }) => (
-              <Link
-                onClick={() => setIsOpen(false)}
-                key={path}
-                className="text-3xl text-white font-medium transition-colors duration-300 link"
-                to={path}
-              >
-                {name}
-              </Link>
+              name !== "Book Consultation" ? (
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  key={path}
+                  className="text-3xl text-white font-medium transition-colors duration-300 link"
+                  to={path}
+                >
+                  {name}
+                </Link>
+              ) : null
             ))}
+            <Link
+              onClick={() => setIsOpen(false)}
+              to="/book-consultation"
+              className="text-white hover:text-white cursor-pointer font-light tracking-wide border bg-primary/60 border-primary hover:bg-primary text-xl hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-2 transition-all duration-300 w-fit"
+            >
+              Book Consultation
+            </Link>
           </div>
         </Drawer>
         <div

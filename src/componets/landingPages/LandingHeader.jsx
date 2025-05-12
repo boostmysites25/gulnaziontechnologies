@@ -54,9 +54,9 @@ const LandingHeader = () => {
 
   return (
     <div
-      className={`py-3 fixed top-0 w-full text-white z-50  ${
+      className={`py-3 fixed backdrop-blur-md top-0 w-full text-white z-50  ${
         isScrolled
-          ? "bg-primary/20 backdrop-blur-md text-white"
+          ? "bg-primary/20 text-white"
           : "bg-primary/20 text-white"
       }`}
     >
@@ -91,6 +91,12 @@ const LandingHeader = () => {
               )
             )}
             <Link className={`link text-sm `}>Blogs</Link>
+            <CustomLink 
+              to="/book-consultation" 
+              className="text-white hover:text-white cursor-pointer font-light tracking-wide border bg-primary/60 border-primary hover:bg-primary text-sm hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-2 transition-all duration-300"
+            >
+              Book Consultation
+            </CustomLink>
           </div>
         </div>
         <Drawer
@@ -129,6 +135,13 @@ const LandingHeader = () => {
               )
             )}
             <Link className={`link text-sm `}>Blogs</Link>
+            <CustomLink 
+              to="/book-consultation" 
+              onClick={() => setIsOpen(false)}
+              className="text-white hover:text-white cursor-pointer font-light tracking-wide border bg-primary/60 border-primary hover:bg-primary text-sm hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-2 transition-all duration-300 w-fit"
+            >
+              Book Consultation
+            </CustomLink>
           </div>
         </Drawer>
         <div

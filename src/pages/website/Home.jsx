@@ -61,9 +61,14 @@ const Home = () => {
               constant innovation through smart automation and data-powered
               insights.
             </p>
-            <Link to="/contact-us" className="primary-btn mt-2">
-              Get Started
-            </Link>
+            <div className="flex gap-4 flex-wrap justify-center">
+              <Link to="/contact-us" className="primary-btn mt-2">
+                Get Started
+              </Link>
+              <Link to="/book-consultation" className="secondary-btn mt-2">
+                Book a Consultation
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -93,12 +98,15 @@ const Home = () => {
                 ever-evolving digital landscape.
               </p>
             </div>
-            <div className="flex gap-5 mt-4 justify-center lg:justify-start">
+            <div className="flex gap-5 mt-4 justify-center lg:justify-start flex-wrap">
               <Link to="/contact-us" className="primary-btn">
                 Contact Us
               </Link>
               <Link to="/services" className="secondary-btn">
                 Our Services
+              </Link>
+              <Link to="/book-consultation" className="primary-btn">
+                Book Consultation
               </Link>
             </div>
           </div>
