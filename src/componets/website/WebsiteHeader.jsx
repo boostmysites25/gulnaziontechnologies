@@ -32,10 +32,10 @@ const WebsiteHeader = () => {
 
   return (
     <div
-      className={`pt-3 pb-6 fixed top-0 w-full z-50 text-headertextcolor transition-all duration-300 ${
+      className={`py-3 fixed top-0 w-full z-50 text-white transition-all duration-300 ${
         isScrolled
-          ? "bg-white backdrop-blur-md text-black"
-          : "bg-white text-black"
+          ? "bg-primary/20 backdrop-blur-md text-white"
+          : "bg-primary/20 text-white"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
@@ -43,7 +43,7 @@ const WebsiteHeader = () => {
           <Link to="/">
             <img
               src={logoImg}
-              className="h-[2rem] md:h-[4rem] ml-5 scale-125"
+              className="h-[3rem] md:h-[4rem] md:ml-5 scale-125"
               alt="logo"
             />
           </Link>

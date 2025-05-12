@@ -54,10 +54,10 @@ const LandingHeader = () => {
 
   return (
     <div
-      className={`pt-3 pb-6 fixed top-0 w-full   z-50  ${
+      className={`py-3 fixed top-0 w-full text-white z-50  ${
         isScrolled
-          ? "bg-white backdrop-blur-md text-black"
-          : "bg-white text-black"
+          ? "bg-primary/20 backdrop-blur-md text-white"
+          : "bg-primary/20 text-white"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
