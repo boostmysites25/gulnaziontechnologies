@@ -123,6 +123,7 @@ export const companyDetails = {
   linkedIn: "https://www.linkedin.com/company/gulnazion-technologies",
 };
 
+
 // website routes
 export const routes = [
   {
