@@ -116,7 +116,7 @@ export const companyDetails = {
   phone: "+918890917110",
   whatsapp: "918890917110",
   whatsappbox: "918890917110",
-  email: "gulnazion.technologies@gmail.com",
+  email: "info@gulnazionai.com",
   address: "Aerodrome Circle Kota Rajasthan 324006, India",
   instagram:
     "https://www.instagram.com/gulnazion_ai_tech?igsh=MXFqZXVubXdkZmdkbg==",
