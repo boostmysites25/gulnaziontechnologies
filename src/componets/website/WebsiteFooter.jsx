@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 
 const WebsiteFooter = () => {
   return (
-    <div className="py-14 bg-secondary/80">
-      <div className="wrapper text-white">
+    <div className="py-14 bg-primary/50 relative">
+      <div className="absolute inset-0 w-full h-full bg-black/30"/>
+      <div className="wrapper text-white z-[1] relative">
         <div className="flex md:flex-row flex-col justify-between gap-10">
           <div className="flex flex-col items-center">
             <img src={logoImg} className="h-[6rem]" alt="" />
