@@ -73,7 +73,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="py-[3rem] bg-backgroundcolor text-primarytextcolor wrapper">
+      <section className="py-[3rem] text-primarytextcolor wrapper">
         <div
           data-aos="fade-right"
           className="gradient-rounded-text-box mx-auto lg:mx-0"
@@ -99,9 +99,6 @@ const Home = () => {
               </p>
             </div>
             <div className="flex gap-5 mt-4 justify-center lg:justify-start flex-wrap">
-              <Link to="/contact-us" className="primary-btn">
-                Contact Us
-              </Link>
               <Link to="/services" className="secondary-btn">
                 Our Services
               </Link>

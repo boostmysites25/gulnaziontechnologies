@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  BsFacebook,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter,
-  BsYoutube,
-} from "react-icons/bs";
+import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { companyDetails, logoImg, routes } from "../../constant";
 import { Link } from "react-router-dom";
 
 const WebsiteFooter = () => {
   return (
-    <div className="py-14 bg-[#26000085]">
+    <div className="py-14 bg-secondary/80">
       <div className="wrapper text-white">
         <div className="flex md:flex-row flex-col justify-between gap-10">
           <div className="flex flex-col items-center">
