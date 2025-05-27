@@ -264,7 +264,7 @@ const ContactUs = () => {
           <div className="backdrop-blur-sm rounded-xl">
             <div
               className="calendly-inline-widget"
-              data-url="https://calendly.com/gulnazion-technologies"
+              data-url="https://calendly.com/gulnazionai-info"
             />
           </div>
         </div>
