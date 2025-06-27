@@ -44,6 +44,25 @@ const ServiceDetails = () => {
             )
           )}
         </p>
+        {/* Tech Stack */}
+        <div data-aos="fade-up" className="pt-4">
+          <h3 className="text-xl font-semibold">Technologies We Use</h3>
+          <ul className="w-full flex flex-wrap  gap-3 sm:pl-6 mt-5">
+            {details.techStack.map((tech, index) => (
+              <li
+                key={index}
+                className="text-base group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.33%-0.75rem)] rounded-lg bg-primary hover:bg-white/30 hover:shadow-2xl border border-transparent hover:border-slate-200 backdrop-blur-md p-6 hover:scale-105 transition-all duration-700 flex items-center gap-3"
+              >
+                <span className="group-hover:animate-bounce duration-300 transition-all ">
+                  {tech.icon}
+                </span>
+                <span className="text-lg font-semibold group-hover:text-secondary duration-300 transition-all">
+                  {tech.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
         <Testimonials />
       </div>
     </div>

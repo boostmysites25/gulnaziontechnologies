@@ -2,7 +2,7 @@ import { allServices, serviceaidevelopment } from "../../../constant";
 import Testimonials from "../../common/Testimonials";
 
 const ArtificialIntelligence = () => {
-  const details = allServices[1];
+  const details = allServices[3]; // Updated to index 3 for Artificial Intelligence service
   const splitIntoParagraphs = (text, numParagraphs = 3) => {
     const sentences = text.split(". ").map((sentence) => sentence + ".");
     const chunkSize = Math.ceil(sentences.length / numParagraphs);
@@ -21,7 +21,7 @@ const ArtificialIntelligence = () => {
         src={serviceaidevelopment}
         loading="lazy"
         className="h-[25rem] object-cover rounded-3xl object-center"
-        alt="web development"
+        alt="artificial intelligence"
       />
       <div className="flex flex-col gap-4 md:px-5">
         {/* Service Title */}
@@ -38,23 +38,26 @@ const ArtificialIntelligence = () => {
               </p>
             )
           )}
-          {/* {details.detailContent} */}
         </p>
 
-        {/* Points List */}
+        {/* Tech Stack */}
         <div data-aos="fade-up" className="pt-4">
-          {/* <h3 className="text-xl font-semibold">{details.title}</h3> */}
-          {/* <ul className="w-full flex flex-wrap justify-between gap-3  sm:pl-6 mt-5">
-            {details.points.list.map((item, index) => (
+          <h3 className="text-xl font-semibold">Technologies We Use</h3>
+          <ul className="w-full flex flex-wrap justify-between gap-3 sm:pl-6 mt-5">
+            {details.techStack.map((tech, index) => (
               <li
                 key={index}
-                className="text-base w-full rounded-lg  bg-primary hover:bg-opacity-30 p-6 hover:scale-105 transition-all duration-700"
+                className="text-base w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.33%-0.75rem)] rounded-lg bg-primary hover:bg-opacity-30 p-6 hover:scale-105 transition-all duration-700 flex items-center gap-3"
               >
-                <h3 className="text-lg font-semibold">{item.heading}</h3>
-                <p> {item.desc}</p>
+                {tech.icon}
+                <span className="text-lg font-semibold">{tech.name}</span>
               </li>
             ))}
-          </ul> */}
+          </ul>
+        </div>
+
+        {/* Testimonials */}
+        <div data-aos="fade-up" className="pt-4">
           <Testimonials />
         </div>
       </div>

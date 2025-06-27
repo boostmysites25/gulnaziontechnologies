@@ -152,7 +152,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <CommonProject />
+      {/* <CommonProject /> */}
       {/* <Faqs /> */}
       {/* <WhyChooseUs /> */}
       <UnlockEfficiency />

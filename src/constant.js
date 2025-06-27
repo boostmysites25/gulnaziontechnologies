@@ -44,6 +44,7 @@ import { lazy } from "react";
 import { BiBrain, BiBulb, BiRocket } from "react-icons/bi";
 import { GoFileMedia, GoGraph } from "react-icons/go";
 import { SlBadge } from "react-icons/sl";
+
 import {
   MdCloudQueue,
   MdDeveloperMode,
@@ -57,21 +58,124 @@ import {
   GiRobotLeg,
   GiVendingMachine,
 } from "react-icons/gi";
+import {
+  FaReact,
+  FaNodeJs,
+  FaAngular,
+  FaVuejs,
+  FaJs,
+  FaPython,
+  FaAws,
+  FaDocker,
+  FaEthereum,
+  FaBitcoin,
+  FaFigma,
+  FaSketch,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiTensorflow,
+  SiPytorch,
+  SiMicrosoftazure,
+  SiGooglecloud,
+  SiBinance,
+  SiAdobe,
+  SiHiveBlockchain,
+  SiNextdotjs,
+  SiGraphql,
+  SiSwift,
+  SiKotlin,
+  SiSolidity,
+  SiWeb3Dotjs,
+  SiIpfs,
+  SiOpencv,
+  SiHuggingface,
+  SiScikitlearn,
+  SiKeras,
+  SiPandas,
+  SiNumpy,
+  SiMlflow,
+  SiKubernetes,
+  SiTerraform,
+  SiAdobexd,
+  SiSketch,
+  SiFramer,
+  SiInvision,
+} from "react-icons/si";
+
 import { HiChatBubbleBottomCenterText } from "react-icons/hi2";
-import { BsFillClipboard2DataFill } from "react-icons/bs";
 import { FaAppStoreIos, FaGamepad } from "react-icons/fa";
-import { SiFlutter, SiHiveBlockchain } from "react-icons/si";
+import { SiFlutter } from "react-icons/si";
 import { IoLogoAndroid, IoMdCloudDone } from "react-icons/io";
 import { CgWebsite } from "react-icons/cg";
 import { TfiLayoutMediaRightAlt } from "react-icons/tfi";
 import { TbDeviceMobileCode } from "react-icons/tb";
 import { FaMobileScreen } from "react-icons/fa6";
+import { Blocks } from "lucide-react";
+import { BsFillClipboard2DataFill } from "react-icons/bs";
 
+import { SiHyperledger } from "react-icons/si";
+
+// porfolio image
+// Import all images at the top (Web Development)
+import FiveGHomesImg from "./assets/web-development-portfolio/5ghomes.png";
+import ColdCreekcapImg from "./assets/web-development-portfolio/cold-creekcap.png";
+import ThinkRealityImg from "./assets/web-development-portfolio/think-reality.png";
+import AkashMegaMart from "./assets/web-development-portfolio/Akash-Mega-Mart.png";
+import MidwamImmersive from "./assets/web-development-portfolio/Midwam–Immersive-Experience-Design-Company.png";
+import Autopilot from "./assets/web-development-portfolio/Autopilot.png";
+import FEGroup from "./assets/web-development-portfolio/fegroup.png";
+import HugeInc from "./assets/web-development-portfolio/HugeInc.png";
+import CodeHelp from "./assets/web-development-portfolio/CodeHelp.png";
+import Spray from "./assets/web-development-portfolio/Spray.png";
+import ArcaneMirage from "./assets/web-development-portfolio/ArcaneMirage.png";
+import MessinaCatering from "./assets/web-development-portfolio/MessinaCatering.png";
+import MasterShala from "./assets/web-development-portfolio/MasterShala.png";
+import MantraDhwani from "./assets/web-development-portfolio/MantraDhwani.png";
+
+// Import all images at the top (App Development)
+import RentopBikeAndCarImgapp from "./assets/app-development-portfolio/Rentop–Bike-&-Car-Rentals.png";
+import AkashMegaMartApp from "./assets/app-development-portfolio/Akash-Mega-Mart-Mobile-App.png";
+import FeelItMobileApp from "./assets/app-development-portfolio/FeelIt-Mobile-App.png";
+import KlikomicsMobileApp from "./assets/app-development-portfolio/Klikomics-Mobile-App.png";
+import AutoSnapMobileApp from "./assets/app-development-portfolio/AutoSnap-Mobile-App.png";
+import vetlab from "./assets/app-development-portfolio/vetlab.png";
+import eva from "./assets/app-development-portfolio/eva.png";
+import evansfrancis from "./assets/app-development-portfolio/evansfrancis.png";
+import planta from "./assets/app-development-portfolio/planta.png";
+import Serviz from "./assets/app-development-portfolio/serviz.png";
+import freshandfresh from "./assets/app-development-portfolio/freshandfresh.png";
+
+//portfolio block chain
+import nanoflow from "./assets/portfolio/nanoflow.png";
+import padipal from "./assets/portfolio/padipal.png";
+import cryptopadie from "./assets/portfolio/cryptopadie.png";
+import ProjectButterfly from "./assets/portfolio/ProjectButterfly.png";
+import Solalgo from "./assets/portfolio/Solalgo.png";
+import Taikonz from "./assets/portfolio/Taikonz.png";
+
+//ecommerce portfolio
+import Banjaaran from "./assets/ecommerce-portfolio/Banjaaran.png";
+import GullyLabs from "./assets/ecommerce-portfolio/GullyLabs.png";
+import NickronIndia from "./assets/ecommerce-portfolio/NickronIndia.png";
+import OfficialDAPP from "./assets/ecommerce-portfolio/OfficialDAPP.png";
+
+//ai Project
+import FindMyAITool from "./assets/aiportfolio/FindMyAITool.png";
+
+//shopify portfolio
+import BBBShop from "./assets/shopifyportfolio/BBBShop.png";
+import NaseemPerfume from "./assets/shopifyportfolio/NaseemPerfume.png";
+import TheEthnicCloset from "./assets/shopifyportfolio/TheEthnicCloset.png";
 const Home = lazy(() => import("./pages/website/Home"));
 const Services = lazy(() => import("./pages/website/Services"));
 const ContactUs = lazy(() => import("./pages/website/ContactUs"));
 const AboutUs = lazy(() => import("./pages/website/AboutUs"));
 const BookConsultation = lazy(() => import("./pages/website/BookConsultation"));
+const Portfolio = lazy(() => import("./pages/website/Portfolio"));
 
 export {
   logoImg,
@@ -123,7 +227,6 @@ export const companyDetails = {
   linkedIn: "https://www.linkedin.com/company/gulnazion-technologies",
 };
 
-
 // website routes
 export const routes = [
   {
@@ -141,11 +244,11 @@ export const routes = [
     path: "/about-us",
     component: <AboutUs />,
   },
-  // {
-  //   name: "Blogs",
-  //   path: "",
-  //   component: "",
-  // },
+  {
+    name: "Portfolio",
+    path: "/portfolio",
+    component: <Portfolio />,
+  },
   {
     name: "Contact Us",
     path: "/contact-us",
@@ -265,6 +368,7 @@ export const appDevelopmentServices = [
 ];
 
 // all services
+
 export const allServices = [
   {
     id: 1,
@@ -274,6 +378,15 @@ export const allServices = [
     desc: "Build robust, scalable, and responsive websites to enhance your online presence. Our web development services ensure seamless functionality, engaging user interfaces, and compatibility across all devices.",
     detailContent:
       "Our web development team combines technical expertise with creative flair to deliver websites that not only look great but also perform excellently. We specialize in creating dynamic, user-friendly websites using modern frameworks like React, Angular, and Vue.js. From e-commerce platforms to content management systems, our custom solutions are tailored to meet your business goals. With a strong focus on performance optimization, security, and SEO, we ensure your website stands out in today's competitive digital landscape. Our services include full-cycle development, from ideation and wireframing to deployment and maintenance, providing end-to-end support for all your web development needs.",
+    techStack: [
+      { name: "React", icon: <FaReact className="w-6 h-6" /> },
+      { name: "Next.js", icon: <SiNextdotjs className="w-6 h-6" /> },
+      { name: "Node.js", icon: <FaNodeJs className="w-6 h-6" /> },
+      { name: "TypeScript", icon: <SiTypescript className="w-6 h-6" /> },
+      { name: "GraphQL", icon: <SiGraphql className="w-6 h-6" /> },
+      { name: "MongoDB", icon: <SiMongodb className="w-6 h-6" /> },
+      { name: "PostgreSQL", icon: <SiPostgresql className="w-6 h-6" /> },
+    ],
   },
   {
     id: 2,
@@ -283,6 +396,13 @@ export const allServices = [
     desc: "Create intuitive and engaging mobile applications designed to enhance user experiences and streamline operations. Our app development services focus on delivering high-performance, scalable, and visually appealing solutions tailored to your unique business needs.",
     detailContent:
       "We specialize in crafting mobile applications that resonate with your audience and fulfill your business objectives. From concept to deployment, our team ensures each app is user-friendly, feature-rich, and optimized for performance. Using the latest tools and frameworks, we create applications that work seamlessly across various platforms and devices. We prioritize user engagement by incorporating intuitive designs and functionality. Whether you need a standalone mobile app or an extension of your digital ecosystem, our end-to-end app development process includes wireframing, design, development, testing, and support. By integrating advanced technologies like AI and IoT, we deliver innovative apps that drive growth and provide a competitive edge. Our commitment to quality and scalability ensures that your app evolves with your business, offering long-term value and superior user experiences.",
+    techStack: [
+      { name: "React Native", icon: <FaReact className="w-6 h-6" /> },
+      { name: "Flutter", icon: <SiFlutter className="w-6 h-6" /> },
+      { name: "Swift", icon: <SiSwift className="w-6 h-6" /> },
+      { name: "Kotlin", icon: <SiKotlin className="w-6 h-6" /> },
+      { name: "Firebase", icon: <SiFirebase className="w-6 h-6" /> },
+    ],
   },
   {
     id: 3,
@@ -292,6 +412,12 @@ export const allServices = [
     desc: "Revolutionize your business operations with secure, transparent, and decentralized blockchain solutions. Our blockchain development services focus on creating innovative applications tailored to your business needs.",
     detailContent:
       "Our blockchain development services are designed to empower businesses with robust and scalable decentralized applications. We specialize in building custom blockchain solutions, including smart contracts, cryptocurrency wallets, decentralized finance (DeFi) platforms, and supply chain solutions. Leveraging technologies like Ethereum, Hyperledger, and Binance Smart Chain, we ensure your solutions are secure, transparent, and efficient. Whether you're looking to implement blockchain for business transparency or to create innovative blockchain-powered applications, our team has the expertise to help you achieve your goals.",
+    techStack: [
+      { name: "Ethereum", icon: <FaEthereum className="w-6 h-6" /> },
+      { name: "Solidity", icon: <SiSolidity className="w-6 h-6" /> },
+      { name: "Web3.js", icon: <SiWeb3Dotjs className="w-6 h-6" /> },
+      { name: "IPFS", icon: <SiIpfs className="w-6 h-6" /> },
+    ],
   },
   {
     id: 4,
@@ -301,6 +427,13 @@ export const allServices = [
     desc: "Harness the power of AI to drive automation, enhance decision-making, and deliver personalized experiences. Our AI services enable businesses to stay ahead in a rapidly evolving digital landscape.",
     detailContent:
       "Our AI services encompass a wide range of solutions, including natural language processing, computer vision, predictive analytics, and chatbot development. We help businesses integrate AI-driven tools to optimize processes, improve customer engagement, and gain actionable insights. By leveraging machine learning algorithms and advanced data analysis techniques, we create intelligent systems that adapt and evolve with your business needs.",
+    techStack: [
+      { name: "TensorFlow", icon: <SiTensorflow className="w-6 h-6" /> },
+      { name: "PyTorch", icon: <SiPytorch className="w-6 h-6" /> },
+      { name: "Python", icon: <FaPython className="w-6 h-6" /> },
+      { name: "OpenCV", icon: <SiOpencv className="w-6 h-6" /> },
+      { name: "Hugging Face", icon: <SiHuggingface className="w-6 h-6" /> },
+    ],
   },
   {
     id: 5,
@@ -310,6 +443,13 @@ export const allServices = [
     desc: "Unlock the potential of data with machine learning solutions tailored to your business needs. Our machine learning services help you uncover patterns, predict trends, and make data-driven decisions.",
     detailContent:
       "Our machine learning services include developing custom models, implementing deep learning techniques, and creating data-driven applications. From predictive analytics to recommendation engines, our solutions help businesses leverage data for competitive advantage. We work with diverse datasets and use advanced frameworks like TensorFlow and PyTorch to deliver high-performing machine learning models.",
+    techStack: [
+      { name: "Scikit-learn", icon: <SiScikitlearn className="w-6 h-6" /> },
+      { name: "Keras", icon: <SiKeras className="w-6 h-6" /> },
+      { name: "Pandas", icon: <SiPandas className="w-6 h-6" /> },
+      { name: "NumPy", icon: <SiNumpy className="w-6 h-6" /> },
+      { name: "MLflow", icon: <SiMlflow className="w-6 h-6" /> },
+    ],
   },
   {
     id: 6,
@@ -319,6 +459,13 @@ export const allServices = [
     desc: "Scale your business with reliable and secure cloud computing solutions. Our services include cloud migration, infrastructure management, and customized solutions to meet your unique needs.",
     detailContent:
       "Our cloud computing services help businesses transition to the cloud with minimal disruption. We specialize in cloud infrastructure management, data migration, and the development of cloud-native applications. With expertise in AWS, Azure, and Google Cloud, we ensure your cloud infrastructure is secure, scalable, and optimized for performance. From DevOps implementation to disaster recovery planning, we provide end-to-end cloud solutions that drive efficiency and innovation.",
+    techStack: [
+      { name: "AWS", icon: <FaAws className="w-6 h-6" /> },
+      { name: "Azure", icon: <SiMicrosoftazure className="w-6 h-6" /> },
+      { name: "GCP", icon: <SiGooglecloud className="w-6 h-6" /> },
+      { name: "Kubernetes", icon: <SiKubernetes className="w-6 h-6" /> },
+      { name: "Terraform", icon: <SiTerraform className="w-6 h-6" /> },
+    ],
   },
   {
     id: 7,
@@ -328,6 +475,13 @@ export const allServices = [
     desc: "Create impactful digital experiences with our innovative UI/UX design services. We blend aesthetics with functionality to deliver designs that captivate and engage users.",
     detailContent:
       "Our UI/UX design services focus on creating intuitive and visually compelling interfaces that provide a seamless user experience. By conducting in-depth user research and usability testing, we understand your audience and tailor designs to meet their needs. From wireframes and prototypes to high-fidelity designs, we use tools like Figma, Adobe XD, and Sketch to bring ideas to life. Our designs prioritize accessibility, responsiveness, and brand alignment, ensuring that every interaction with your product is meaningful and engaging. Whether you need a fresh design for a new product or a redesign to improve existing workflows, our team is dedicated to delivering solutions that delight users and achieve your business objectives.",
+    techStack: [
+      { name: "Figma", icon: <FaFigma className="w-6 h-6" /> },
+      { name: "Adobe XD", icon: <SiAdobexd className="w-6 h-6" /> },
+      { name: "Sketch", icon: <SiSketch className="w-6 h-6" /> },
+      { name: "Framer", icon: <SiFramer className="w-6 h-6" /> },
+      { name: "InVision", icon: <SiInvision className="w-6 h-6" /> },
+    ],
   },
 ];
 
@@ -363,38 +517,31 @@ export const whyChooseUsContent = [
 export const reviews = [
   {
     id: 1,
-    profileImg: profileImg2,
-    name: "David H",
-    role: "Director of Operations, Elite Travel Co.",
-    desc: "“Launching our startup was no easy task, but Gulnazion Technologies made the development of our website and app stress-free. Their team was approachable, responsive, and incredibly knowledgeable. They delivered a polished, high-performance platform on time and within budget, helping us make a strong entrance into the market.”",
+    profileImg: profileImg1,
+    name: "Aamir Qureshi",
+    role: "Client",
+    desc: "“I took a custom software development service from Gulnazion Technologies, and the experience was awesome! Their team was very helpful and professional throughout the process. The quality of the product delivered was excellent, and everything was done as per the requirements. I'm really happy with their service and would definitely recommend them to anyone looking for reliable software development.”",
   },
   {
     id: 2,
     profileImg: profileImg1,
-    name: "Maria T",
-    role: "Co-Founder, GreenTrail Ventures",
-    desc: "“Collaborating with Gulnazion Technologies was one of the best decisions we made. Their team completely revamped our website, creating an intuitive, easy-to-navigate platform that enhances the user experience. From start to finish, they guided us with expert advice, and the outcome was a beautifully designed website that perfectly represents our brand. We’ve seen a noticeable increase in customer engagement and satisfaction.”",
+    name: "Yugank Nagar",
+    role: "Client",
+    desc: "“I recently worked with Gulnazion Technologies for a custom software development project, and I must say — they did an amazing job! The team was super helpful, easy to communicate with, and very professional. The final product was top-notch. Highly recommend their services!”",
   },
   {
     id: 3,
     profileImg: profileImg1,
-    name: "Sophia R",
-    role: "Founder, Modern Finds Boutique",
-    desc: "“We approached Gulnazion Technologies with the task of building a custom mobile app for our business. Their team did an incredible job bringing our vision to life. They not only met our expectations but exceeded them by adding valuable features that improved the overall functionality. Thanks to them, we now have a mobile app that our users absolutely love, which has boosted our client retention rates and increased our revenue.”",
+    name: "Ayush Goswami",
+    role: "Client",
+    desc: "“Trusted IT service provider. Great experience with website and software projects.”",
   },
   {
     id: 4,
-    profileImg: profileImg2,
-    name: "James L",
-    role: "CEO, FitPro Solutions",
-    desc: "“When we decided to integrate blockchain technology into our operations, we turned to Gulnazion Technologies for help. Their team’s knowledge and understanding of blockchain were evident from the outset. They provided us with a seamless, secure blockchain solution that’s not only improved the transparency of our processes but also enhanced security for our clients. Their expertise has been invaluable in helping us achieve our goals.”",
-  },
-  {
-    id: 5,
     profileImg: profileImg1,
-    name: "Lisa K",
-    role: "Marketing Manager, TrendyTech Inc.",
-    desc: "“We wanted to integrate AI and machine learning into our data analytics processes to make more informed decisions. Gulnazion Technologies delivered a solution that went beyond our expectations. They implemented a predictive analytics system that’s now crucial in helping us forecast trends and improve our decision-making. The AI-powered tools they developed are saving us time and increasing our efficiency.”",
+    name: "Sandhya Soni",
+    role: "Client",
+    desc: "“Your work ethic and dedication to the company's mission are truly inspiring.”",
   },
 ];
 
@@ -502,5 +649,246 @@ export const aboutUsItems = [
       "Our clients are our top priority. We listen closely to your needs, provide regular updates, and ensure that your goals are met. We value open communication and are committed to providing ongoing support long after the project is completed.",
     image: aboutfour,
     gradient: "from-secondary/60 to-secondary/80",
+  },
+];
+
+export const webPortfolio = [
+  {
+    id: 1,
+    img: FiveGHomesImg,
+    title: "5g Homes",
+    link: "https://5ghighspeedinternet.co",
+  },
+  {
+    id: 3,
+    img: ColdCreekcapImg,
+    title: "Cold Creekcap",
+    link: "https://www.coldcreekcap.com",
+  },
+  {
+    id: 9,
+    img: ThinkRealityImg,
+    title: "Think Reality",
+    link: "https://thinkrealty.ae",
+  },
+  {
+    id: 90,
+    img: AkashMegaMart,
+    title: "Akash Mega Mart",
+    link: "https://akashmegamart.com/",
+  },
+  {
+    id: 91,
+    img: MidwamImmersive,
+    title: "Midwam ",
+    link: "https://www.midwam.com/en/about",
+  },
+  {
+    id: 92,
+    img: Autopilot,
+    title: "Autopilot",
+    link: "https://autopilot.io/",
+  },
+  {
+    id: 93,
+    img: FEGroup,
+    title: "FEGroup",
+    link: "https://fe.group/",
+  },
+  {
+    id: 94,
+    img: HugeInc,
+    title: "HugeInc",
+    link: "https://www.hugeinc.com/",
+  },
+  {
+    id: 95,
+    img: CodeHelp,
+    title: "CodeHelp",
+    link: "https://www.codehelp.in/",
+  },
+  {
+    id: 96,
+    img: Spray,
+    title: "Spray(Bluestar)",
+    link: "https://spray-bluestar.vercel.app/",
+  },
+  {
+    id: 97,
+    img: ArcaneMirage,
+    title: "ArcaneMirage",
+    link: "https://www.arcanemirage.com/",
+  },
+  {
+    id: 98,
+    img: MessinaCatering,
+    title: "Messina’sCatering",
+    link: "https://messinascatering.com/",
+  },
+  {
+    id: 98,
+    img: MasterShala,
+    title: "MasterShala",
+    link: "https://mastershala.com/",
+  },
+  {
+    id: 99,
+    img: MantraDhwani,
+    title: "MantraDhwani",
+    link: "https://mantradhwani.com/",
+  },
+];
+
+export const appPortfolio = [
+  {
+    id: 1,
+    img: AkashMegaMartApp,
+    title: "Akash Mega Mart Mobile App",
+    link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart",
+  },
+  {
+    id: 2,
+    img: FeelItMobileApp,
+    title: "FeelIt Mobile App",
+    link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app",
+  },
+  {
+    id: 3,
+    img: KlikomicsMobileApp,
+    title: "Klikomics Mobile App",
+    link: "https://play.google.com/store/apps/details?id=com.klikomics.android&pcampaignid=web_share",
+  },
+  {
+    id: 4,
+    img: AutoSnapMobileApp,
+    title: "AutoSnap Mobile App",
+    link: "https://play.google.com/store/apps/details?id=com.Zigna.AutoSnap&pcampaignid=web_share",
+  },
+  {
+    id: 8,
+    img: RentopBikeAndCarImgapp,
+    title: "Rentop Bike and Car",
+    link: "https://play.google.com/store/apps/details?id=com.rentop&pcampaignid=web_share",
+  },
+  {
+    id: 9,
+    img: vetlab,
+    title: "Vetlab",
+    link: "https://play.google.com/store/apps/details?id=com.app.vetlab",
+  },
+  {
+    id: 10,
+    img: eva,
+    title: "EvaPeopleApp",
+    link: "https://apps.apple.com/eg/app/eva-people-app/id1551622445",
+  },
+  {
+    id: 11,
+    img: evansfrancis,
+    title: "EvansFrancisChristian App",
+    link: "https://play.google.com/store/apps/details?id=com.christianappdevelopers.evansfrancis&pcampaignid=web_share",
+  },
+  {
+    id: 12,
+    img: planta,
+    title: "Planta",
+    link: "https://play.google.com/store/apps/details?id=com.stromming.planta&pcampaignid=web_share",
+  },
+  {
+    id: 13,
+    img: Serviz,
+    title: "Serviz",
+    link: "",
+  },
+  {
+    id: 14,
+    img: freshandfresh,
+    title: "FreshandFresh",
+    link: "https://play.google.com/store/apps/details?id=com.freshandfresh&hl=en_IN",
+  },
+];
+
+export const blockchainPortfolio = [
+  {
+    id: 1,
+    img: nanoflow,
+    title: "Nanoflow",
+    link: "https://play.google.com/store/apps/details?id=com.nanfolo.user.app",
+  },
+  {
+    id: 2,
+    img: padipal,
+    title: "Padipal",
+    link: "https://padiepal.com",
+  },
+  {
+    id: 3,
+    img: cryptopadie,
+    title: "Cryptopadie",
+    link: "https://cryptopadie.com/",
+  },
+  {
+    id: 3,
+    img: ProjectButterfly,
+    title: "ProjectButterfly",
+    link: "https://projectbutterfly.io/",
+  },
+  {
+    id: 3,
+    img: Solalgo,
+    title: "Solalgo",
+    link: "https://solalgo.com/",
+  },
+  {
+    id: 3,
+    img: Taikonz,
+    title: "Taikonz",
+    link: "https://taikonz.io/",
+  },
+];
+
+export const ecommercePortfolio = [
+  { id: 1, img: Banjaaran, title: "Banjaaran", link: "https://banjaaran.in/" },
+  { id: 2, img: GullyLabs, title: "GullyLabs", link: "https://gullylabs.com/" },
+  {
+    id: 3,
+    img: NickronIndia,
+    title: "NickronIndia",
+    link: "https://nickronindia.com/",
+  },
+  {
+    id: 3,
+    img: OfficialDAPP,
+    title: "OfficialDAPP",
+    link: "https://www.officialdapp.com/",
+  },
+];
+
+export const aiPortfolio = [
+  {
+    id: 1,
+    img: FindMyAITool,
+    title: "FindMyAITool",
+    link: "https://findmyaitool.com/",
+  },
+];
+export const shopifyPortfolio = [
+  {
+    id: 1,
+    img: BBBShop,
+    title: "BBBShop",
+    link: "https://bbbshop.in/",
+  },
+  {
+    id: 2,
+    img: NaseemPerfume,
+    title: "NaseemPerfume",
+    link: "https://www.naseemperfume.in/?srsltid=AfmBOorIvRMnc7wcdjWvHxfpimuWs5ydG5EEQhiauY7tudZmmdcva4cR",
+  },
+  {
+    id: 3,
+    img: TheEthnicCloset,
+    title: "TheEthnicCloset",
+    link: "https://theethniccloset.com/?srsltid=AfmBOoo0WbBJZTElLP4NpwdFGmYIf6jnO3uV3LWD6Fb1q-ceZVpWzihm",
   },
 ];

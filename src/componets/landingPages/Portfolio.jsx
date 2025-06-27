@@ -1,14 +1,18 @@
 import React from "react";
-import { appPortfolioHomepage, webPortfolioHomepage } from "../../constant";
+import {
+  appPortfolio,
+  appPortfolioHomepage,
+  webPortfolio,
+  webPortfolioHomepage,
+} from "../../constant";
 import { useKeenSlider } from "keen-slider/react";
+import { Link } from "react-router-dom";
 
 const animation = { duration: 60000, easing: (t) => t };
 
 const Portfolio = ({ page }) => {
   const isWebDevelopment = Boolean(page === "web-development");
-  let portfolio = isWebDevelopment
-    ? webPortfolioHomepage
-    : appPortfolioHomepage;
+  let portfolio = isWebDevelopment ? webPortfolio : appPortfolio;
 
   const [sliderRef] = useKeenSlider({
     loop: true,
@@ -43,7 +47,7 @@ const Portfolio = ({ page }) => {
       "(min-width: 1024px)": {
         // Tailwind 'lg' and above (1024px and above)
         slides: {
-          perView: 3, // Show 4 slides
+          perView: 4, // Show 4 slides
           spacing: 30,
         },
       },
@@ -72,12 +76,15 @@ const Portfolio = ({ page }) => {
           <p className="gradient-text uppercase gradient-rounded-text-box">
             Portfolio
           </p>
-          <h2 className="heading-2 text-center mt-16 mb-5">Our Selected Projects</h2>
+          <h2 className="heading-2 text-center mt-16 mb-5">
+            Our Selected Projects
+          </h2>
           <div ref={sliderRef} className="keen-slider">
             {portfolio.map((obj) => (
-              <div
+              <Link
                 key={obj.title}
-                className="keen-slider__slide border-2 border-primary/40 rounded-xl bg-custom-gradient "
+                to={obj.link}
+                className="keen-slider__slide border-2 group border-primary/40 rounded-xl bg-custom-gradient "
                 // data-aos="fade-up"
               >
                 {/* <div
@@ -88,15 +95,17 @@ const Portfolio = ({ page }) => {
                 <img
                   src={obj.img}
                   alt={obj.title}
-                  className="rounded-t-xl hover:scale-105 transition-all duration-300 lg:max-h-[316px] w-full  2xl:max-h-[467px] object-cover"
+                  className="rounded-t-xl aspect-square hover:scale-105 transition-all duration-300 lg:max-h-[316px] w-full  2xl:max-h-[467px] object-cover"
                 />
                 {/* ${obj.title === "House of Deliverance" && `2xl:min-h-[480px]`} */}
                 {/* </div> */}
                 <div className="px-3 mt-3 pb-5 max-h-[96px]">
-                  <h4 className="font-semibold text-xl">{obj.title}</h4>
-                  <p className="desc">{obj.description}</p>
+                  <h4 className="font-semibold text-xl group-hover:text-primary transition-all duration-300">
+                    {obj.title}
+                  </h4>
+                  {/* <p className="desc">{obj.description}</p> */}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
