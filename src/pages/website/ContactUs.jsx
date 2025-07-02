@@ -34,16 +34,19 @@ const ContactUs = () => {
       to: companyDetails.email,
       subject: "You have a new message from Gulnazion Technologies",
       body: emailBody,
-      name:"Gulnazion Technologies",
+      name: "Gulnazion Technologies",
     };
 
-    await fetch("https://send-mail-redirect-boostmysites.vercel.app/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
+    await fetch(
+      "https://send-mail-redirect-boostmysites.vercel.app/send-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    )
       .then((response) => response.json())
       .then((res) => {
         if (res.error) {
@@ -75,7 +78,7 @@ const ContactUs = () => {
       <div className="wrapper py-[5rem] grid lg:grid-cols-[45%_auto] gap-7">
         <div
           data-aos="fade-right"
-          className="bg-gradient-to-r flex flex-col gap-2 text-white from-primarytextcolor to-primarytextcolor p-4 rounded-xl"
+          className="bg-gradient-to-br flex flex-col gap-2 text-black p-4 rounded-xl"
         >
           <div className="gradient-rounded-text-box">Contact Us</div>
           <h2 className="heading-2 mt-5">Reach Out to Us</h2>
@@ -91,7 +94,7 @@ const ContactUs = () => {
             className="flex items-start gap-3 w-fit mt-5"
           >
             <div className="w-[2.5rem] h-[2.5rem] rounded-full bg-primary flex justify-center items-center">
-              <FaPhone className="text-2xl scale-x-[-1]" />
+              <FaPhone className="text-white text-2xl scale-x-[-1]" />
             </div>
             <div className="flex flex-col h-full">
               <p className="font-medium">Call Us</p>
@@ -103,7 +106,7 @@ const ContactUs = () => {
             className="flex items-start gap-3 w-fit mt-5"
           >
             <div className="w-[2.5rem] h-[2.5rem] rounded-full bg-primary flex justify-center items-center">
-              <IoMail className="text-3xl scale-x-[-1]" />
+              <IoMail className="text-white text-3xl scale-x-[-1]" />
             </div>
             <div className="flex flex-col h-full">
               <p className="font-medium">Email</p>
@@ -112,7 +115,7 @@ const ContactUs = () => {
           </Link>
           <div className="flex items-start gap-3 w-fit mt-5">
             <div className="min-w-[2.5rem] w-[2.5rem] h-[2.5rem] rounded-full bg-primary flex justify-center items-center">
-              <FaLocationDot className="text-2xl scale-x-[-1]" />
+              <FaLocationDot className="text-white text-2xl scale-x-[-1]" />
             </div>
             <div className="flex flex-col h-full">
               <p className="font-medium">Location</p>
@@ -125,7 +128,7 @@ const ContactUs = () => {
           className="h-full flex flex-col justify-between gap-7"
         >
           <div className="p-[1px] text-white h-full bg-gradient-to-r from-secondary to-primary rounded-lg">
-            <div className="rounded-lg h-full bg-primarytextcolor p-4">
+            <div className="rounded-lg h-full bg-gradient-to-br p-4">
               <h3 className="text-lg">Have Any Question?</h3>
               <form
                 className="flex flex-col gap-4 mt-5"
@@ -134,7 +137,7 @@ const ContactUs = () => {
                 <div className="flex flex-col gap-1">
                   <input
                     type="text"
-                    className="border-primary/40 p-2 rounded-md border outline-none bg-transparent"
+                    className="border-white p-2 rounded-md border outline-none bg-white"
                     placeholder="Name"
                     {...register("name", { required: "Name is required" })}
                   />
@@ -149,7 +152,7 @@ const ContactUs = () => {
                   <div className="flex flex-col gap-1">
                     <input
                       type="email"
-                      className="border-primary/40 p-2 rounded-md border outline-none bg-transparent"
+                      className="border-white p-2 rounded-md border outline-none bg-white"
                       placeholder="Email"
                       {...register("email", {
                         required: "Email is required",
@@ -169,7 +172,7 @@ const ContactUs = () => {
                   <div className="flex flex-col gap-1">
                     <input
                       type="tel"
-                      className="border-primary/40 p-2 rounded-md border outline-none bg-transparent"
+                      className="border-white p-2 rounded-md border outline-none bg-white"
                       placeholder="Phone Number"
                       {...register("phone", {
                         required: "Phone number is required",
@@ -189,7 +192,7 @@ const ContactUs = () => {
                 <div className="flex flex-col gap-1">
                   <input
                     type="tel"
-                    className="border-primary/40 p-2 rounded-md border outline-none bg-transparent"
+                    className="border-white p-2 rounded-md border outline-none bg-white"
                     placeholder="Subject"
                     {...register("subject", {
                       required: "Subject is required",
@@ -205,7 +208,7 @@ const ContactUs = () => {
                 <div className="flex flex-col gap-1">
                   <textarea
                     rows="6"
-                    className="border-primary/40 p-2 rounded-md border outline-none bg-transparent"
+                    className="border-white p-2 rounded-md border outline-none bg-white"
                     placeholder="Message"
                     {...register("message", {
                       required: "Message is required",
@@ -220,7 +223,8 @@ const ContactUs = () => {
 
                 <button
                   type="submit"
-                  className="text-white hover:text-white cursor-pointer font-light tracking-wide  border bg-primary/60 border-primary hover:bg-primary text-sm  hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-4 min-w-[7rem] flex justify-center text-center transition-all duration-300"
+                  className="mt-4 bg-white text-black px-5 py-3 rounded-full hover:text-primary hover:-translate-y-1 duration-300 transition-all"
+                  disabled={spinner}
                 >
                   {spinner ? "Sending..." : "Send Message"}
                 </button>
@@ -228,20 +232,20 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="flex lg:col-span-2 gap-5 items-center text-primarytextcolor mb-1 mx-auto">
+        <div className="flex lg:col-span-2 gap-5 items-center text-primary mb-1 mx-auto">
           <p>Follow Us On:</p>
           <div className="flex items-center gap-3">
             <Link
               to={companyDetails.instagram}
               className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center"
             >
-              <BsInstagram className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
+              <BsInstagram className="text-xl text-primary group-hover:text-secondary transition-all duration-300" />
             </Link>
             <Link
               to={companyDetails.linkedIn}
               className="group w-[2.5rem] h-[2.5rem] rounded-full border-primary border flex justify-center items-center"
             >
-              <BsLinkedin className="text-xl text-primarytextcolor group-hover:text-primary transition-all duration-300" />
+              <BsLinkedin className="text-xl text-primary group-hover:text-secondary transition-all duration-300" />
             </Link>
           </div>
         </div>
@@ -250,16 +254,19 @@ const ContactUs = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary/5 to-primary/5 rounded-2xl"></div>
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-secondary/20 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl"></div>
-        
+
         <div className="relative z-10 text-center mb-10" data-aos="fade-up">
-          <div className="gradient-rounded-text-box mx-auto mb-4">Schedule a Meeting</div>
+          <div className="gradient-rounded-text-box mx-auto mb-4">
+            Schedule a Meeting
+          </div>
           <h2 className="heading-2 mb-4">Book a Consultation</h2>
           <p className="desc max-w-2xl mx-auto">
-            Take the first step towards transforming your digital presence. Schedule a personalized consultation 
-            to discuss your project requirements and explore how we can help you achieve your goals.
+            Take the first step towards transforming your digital presence.
+            Schedule a personalized consultation to discuss your project
+            requirements and explore how we can help you achieve your goals.
           </p>
         </div>
-        
+
         <div className="" data-aos="fade-up">
           <div className="backdrop-blur-sm rounded-xl">
             <div
@@ -273,6 +280,5 @@ const ContactUs = () => {
     </>
   );
 };
-
 
 export default ContactUs;

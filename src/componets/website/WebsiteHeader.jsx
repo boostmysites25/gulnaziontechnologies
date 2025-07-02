@@ -34,8 +34,8 @@ const WebsiteHeader = () => {
     <div
       className={`py-3 fixed backdrop-blur-md top-0 w-full z-50 text-white transition-all duration-300 ${
         isScrolled
-          ? "bg-primary/20 text-white"
-          : "bg-primary/20 text-white"
+          ? "bg-black/20 text-white"
+          : "bg-black/20 text-white"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
@@ -63,7 +63,7 @@ const WebsiteHeader = () => {
             ))}
             <Link
               to="/book-consultation"
-              className="text-white hover:text-white cursor-pointer font-light tracking-wide border bg-primary/60 border-primary hover:bg-primary text-sm hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-2 transition-all duration-300"
+              className="primary-btn"
             >
               Book Consultation
             </Link>

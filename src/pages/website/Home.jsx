@@ -11,11 +11,12 @@ import Testimonials from "../../componets/common/Testimonials";
 import Faqs from "../../componets/common/Faqs";
 import Credibility from "../../componets/common/Credibility";
 import CommonProject from "../../componets/website/CommonProject";
+import GetInTouch from "../../componets/website/GetInTouch";
 
 const Home = () => {
   return (
     <>
-      <div id="banner" className="h-screen relative">
+      <div id="banner" className="h-screen relative z-0">
         <ReactPlayer
           url={homeBannerVideo}
           loop
@@ -33,6 +34,8 @@ const Home = () => {
                   objectFit: "cover",
                   width: "100%",
                   height: "100%",
+                  position: "absolute",
+                  zIndex: 0,
                 },
                 controlsList: "nodownload noplaybackrate",
                 disablePictureInPicture: true,
@@ -41,7 +44,7 @@ const Home = () => {
             },
           }}
         />
-        <div className="bg-gradient-to-r to-black/50 from-transparent absolute w-full h-full"></div>
+        <div className="bg-black/40 absolute inset-0 w-full h-full"></div>
         <div className="pt-[3rem] wrapper flex items-center h-full">
           <div
             data-aos="fade-up"
@@ -124,7 +127,7 @@ const Home = () => {
         // data-aos-offset={-400}
         // data-aos-anchor-placement="top-bottom"
         // data-aos-anchor="selector"
-        className="py-[3rem] bg-[#333333] text-white"
+        className="py-[3rem] bg-gradient-to-r from-secondary to-primary text-white"
       >
         <div
           data-aos-offset={-400}
@@ -132,10 +135,10 @@ const Home = () => {
           data-aos="fade-up"
           className="wrapper text-center flex flex-col gap-3"
         >
-          <div className="gradient-rounded-text-box mx-auto mb-4">
+          <div className="gradient-rounded-text-box !from-white !to-white !border-white mx-auto mb-4">
             Who We Are
           </div>
-          <h1 className="heading-2 bg-gradient-to-r from-primary max-w-[50rem] mx-auto to-secondary bg-clip-text text-transparent">
+          <h1 className="heading-2 bg-gradient-to-r from-white max-w-[50rem] mx-auto to-white bg-clip-text text-transparent">
             Dependable AI-Powered IT Solutions Tailored to Your Business
             Requirements{" "}
           </h1>
@@ -160,8 +163,9 @@ const Home = () => {
       <Credibility />
       <Faqs />
       {/* <EndlessOpportunitiesSection /> */}
-      <div>
-        <Contact />
+      <div className="pt-[3rem]">
+        {/* <Contact  /> */}
+        <GetInTouch />
       </div>
     </>
   );

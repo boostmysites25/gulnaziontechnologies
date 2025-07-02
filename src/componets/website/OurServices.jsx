@@ -96,7 +96,7 @@ const OurServices = ({ length }) => {
     }
   };
   return (
-    <div className="py-[2rem] sm:py-[5rem] bg-backgroundcolor text-primarytextcolor">
+    <div className="py-[2rem] border sm:py-[5rem] bg-backgroundcolor text-primarytextcolor">
       <div
         data-aos="fade-up"
         className="wrapper flex flex-col text-center gap-5 items-center"
@@ -127,9 +127,9 @@ const OurServices = ({ length }) => {
                 // data-aos="fade-up"
                 to={`/services/${service.title}`}
                 key={service.id}
-                className=" rounded-lg p-[1px]  cursor-pointer h-full "
+                className=" rounded-lg p-[1px] cursor-pointer h-full "
               >
-                <div className="group hover:scale-105 h-full   rounded-lg bg-backgro-gradient p-[1px] transition-all  duration-500">
+                <div className="group hover:scale-105 shadow-lg h-full border rounded-lg bg-backgro-gradient p-[1px] transition-all  duration-500">
                   <div className="rounded-lg bg-white min-h-[31rem] sm:min-h-[23.25rem] hover:bg-custom-gradient p-5 flex flex-col justify-between items-start text-start h-full gap-4">
                     <div className="flex flex-col gap-3">
                       <div className="flex items-center gap-4 mb-4">

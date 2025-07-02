@@ -15,6 +15,8 @@ const ServicePageLayout = () => {
   const wrapperRef = useRef(null);
   const prevPath = useRef(pathname); // To store the previous path
 
+  const details = allServices.find((service) => service.title === title);
+
   useEffect(() => {
     if (pathname.startsWith("/services/")) {
       // Check if the user is coming to the page for the first time or navigating within
@@ -44,13 +46,13 @@ const ServicePageLayout = () => {
   return (
     <>
       <WebsiteHeader />
-      <ServiceDetailsBanner title={title}/>
+      <ServiceDetailsBanner title={title} image={details.image} />
       <div ref={wrapperRef} className="wrapper">
         <div className="py-[5rem] grid md:grid-cols-[30%_65%] grid-cols-1 gap-10">
           <div className="w-full flex flex-col gap-10">
             <div
               data-aos="fade-up"
-              className="bg-[#ECF8FF] p-4 lg:p-6 rounded-lg"
+              className="bg-gradient-to-r from-[#fff8f3] to-[#fff4eb] p-4 lg:p-6 rounded-lg border border-[#fde0d0]"
             >
               <h4 className="text-2xl font-medium">All Services</h4>
               <div className="mt-5 flex flex-wrap md:flex-col flex-col gap-3">
@@ -60,7 +62,7 @@ const ServicePageLayout = () => {
                     className={`${
                       item.title === title
                         ? "bg-primary text-white"
-                        : "bg-white text-[#17012C]"
+                        : "bg-white border text-[#17012C]"
                     } flex items-center gap-2 justify-between p-3 rounded-md`}
                     to={item.title}
                   >
@@ -86,29 +88,6 @@ const ServicePageLayout = () => {
                 </Link>
               </div>
             </Link>
-            {/* <div
-              data-aos="fade-up"
-              className="text-center bg-gradient-to-b from-primary to-[#efb461b1] hidden md:flex flex-col items-start gap-3 px-4 lg:px-6 py-10 rounded-lg"
-            >
-              <h4 className="text-xl font-semibold">Working Days</h4>
-              <div className="flex flex-col gap-3 w-full">
-                <Link className="bg-white text-[#17012C] flex items-center gap-2 p-3 rounded-md">
-                  <BsClock className="text-xl text-primary" />
-                  Mon - Sat: 9:00 AM - 8:00 PM
-                </Link>
-                <Link className="bg-white text-[#17012C] flex items-center gap-2 p-3 rounded-md">
-                  <BsClock className="text-xl text-primary" />
-                  Sunday: Closed
-                </Link>
-                <Link
-                  to="/contact-us"
-                  className="purple-btn flex justify-center items-center gap-2 rounded-md"
-                >
-                  Appointment Now{" "}
-                  <IoIosArrowRoundForward className="text-3xl" />
-                </Link>
-              </div>
-            </div> */}
           </div>
           <div className="w-full">
             <Outlet />
@@ -138,7 +117,7 @@ const ServicePageLayout = () => {
           <Link to={`tel:${companyDetails.phone}`} className="font-semibold">
             <div
               data-aos="fade-up"
-              className="text-center bg-gradient-to-b flex md:hidden flex-col items-center gap-3 text-white from-primary to-[#efb461b1] px-4 lg:px-6 py-10 rounded-lg"
+              className="text-center bg-gradient-to-b flex md:hidden flex-col items-center gap-3 text-white from-primary to-secondary px-4 lg:px-6 py-10 rounded-lg"
             >
               <div className="w-[3.5rem] h-[3.5rem] bg-white text-primary rounded-full p-3 flex justify-center items-center">
                 <FaPhoneAlt className="text-3xl" />

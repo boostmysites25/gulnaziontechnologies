@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const UnlockEfficiency = () => {
   return (
-    <section className="py-[3rem] text-primarytextcolor bg-backgroundcolor">
+    <section className="py-[3rem] border text-primarytextcolor bg-backgroundcolor">
       <div
         data-aos-offset={-400}
         data-aos="fade-up"

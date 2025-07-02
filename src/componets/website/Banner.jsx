@@ -53,7 +53,7 @@ const Banner = ({ page, desc }) => {
       <div className="absolute py-2  top-[40%] left-1/2 -translate-x-1/2 w-full flex flex-col items-center px-3">
         <h1
           data-aos="fade-up"
-          className="heading text-primary text-center font-raleway text-[2.18rem] md:text-7xl font-bold leading-tight"
+          className="heading text-white text-center font-raleway text-[2.18rem] md:text-7xl font-bold leading-tight"
         >
           {page}
         </h1>

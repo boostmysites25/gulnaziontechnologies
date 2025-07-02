@@ -7,6 +7,9 @@ import {
   shopifyPortfolio,
   webPortfolio,
 } from "../../constant";
+import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
+import banner from "../../assets/images/whyus2.jpg";
 
 const Portfolio = () => {
   const [activePortfolio, setActivePortfolio] = useState("web");
@@ -41,7 +44,34 @@ const Portfolio = () => {
 
   return (
     <div className="">
-      <div className="wrapper pt-[9rem] paddingbottom ">
+      <div
+        data-aos="fade-down"
+        className=" h-[40vh] sm:h-[55vh] md:h-[70vh] relative"
+      >
+        <img
+          src={banner}
+          className="object-cover object-center h-full w-full"
+          alt=""
+        />
+        <div className="absolute top-0 w-full h-full bg-black/50"></div>
+        <div className="absolute py-2 top-[40%] left-1/2 -translate-x-1/2 w-full flex flex-col items-center px-3">
+          <h1
+            data-aos="fade-up"
+            className="heading text-white text-center font-raleway text-[2.18rem] md:text-7xl font-bold leading-tight"
+          >
+            Portfolio
+          </h1>
+          <div
+            data-aos="fade-up"
+            className="mt-5 text-base sm:text-xl font-medium px-3 py-2 w-fit rounded-full  flex flex-wrap justify-center text-white items-center gap-1 sm:gap-2"
+          >
+            <Link to="/">Home</Link>
+            <IoIosArrowForward />
+            <h4 className="text-white">Portfolio</h4>
+          </div>
+        </div>
+      </div>
+      <div className="wrapper pt-[4rem] paddingbottom ">
         <h2 className="heading-2 text-center">My Portfolio</h2>
 
         <div className="flex sm:flex-row flex-col  gap-5 justify-center my-8 ">

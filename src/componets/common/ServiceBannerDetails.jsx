@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import homepagebanner from "../../assets/videos/home-banner.mp4";
 
-const ServiceDetailsBanner = ({ title }) => {
+const ServiceDetailsBanner = ({ title, image }) => {
   return (
     <div className="min-h-[45vh] md:min-h-[70vh] w-full page-banner relative bg-[#17012C]">
-      <ReactPlayer
+      {/* <ReactPlayer
         url={homepagebanner}
         loop
         muted
@@ -16,11 +16,13 @@ const ServiceDetailsBanner = ({ title }) => {
         playsinline
         playing
         className="react-player left-0 top-0 absolute object-cover h-full w-full"
-      />
-      <div className="absolute py-2 top-[40%] left-1/2 -translate-x-1/2 w-full flex flex-col items-center px-3">
+      /> */}
+      <div className="bg-black/40 z-10 w-full h-full left-0 top-0 absolute"></div>
+      <img src={image} className="w-full h-full left-0 top-0 absolute object-cover" alt="" />
+      <div className="absolute z-[11] py-2 top-[40%] left-1/2 -translate-x-1/2 w-full flex flex-col items-center px-3">
         <h1
           data-aos="fade-up"
-          className="text-primary text-center font-raleway text-[2rem] md:text-[3.5rem] font-bold leading-tight"
+          className="text-white text-center font-raleway text-[2rem] md:text-[3.5rem] font-bold leading-tight"
         >
           {title}
         </h1>

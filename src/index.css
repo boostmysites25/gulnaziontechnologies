@@ -28,7 +28,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #faeff7;
+  background-color: #ffffff;
 }
 
 @layer utilities {
@@ -48,10 +48,10 @@ body {
     @apply text-headertexthoverandactive font-semibold;
   }
   .primary-btn {
-    @apply text-white hover:text-primary cursor-pointer font-light border border-primary  tracking-wide bg-primary hover:bg-transparent text-sm hover:shadow-black hover:-translate-y-1  shadow-transparent rounded-[.3rem] px-4 py-3 min-w-[7rem] flex justify-center text-center transition-all duration-300;
+    @apply text-white cursor-pointer font-light tracking-wide bg-gradient-to-r from-secondary to-primary  hover:from-primary hover:to-primary text-sm hover:shadow-black hover:-translate-y-1  shadow-transparent rounded-[.3rem] px-4 py-3 min-w-[7rem] flex justify-center text-center transition-all duration-300;
   }
   .secondary-btn {
-    @apply text-primary hover:text-white cursor-pointer font-light tracking-wide bg-transparent border border-primary hover:bg-primary text-sm  hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-3 min-w-[7rem] flex justify-center text-center transition-all duration-300;
+    @apply text-primary hover:text-white cursor-pointer font-light tracking-wide bg-transparent backdrop-blur-sm border border-primary hover:bg-primary text-sm  hover:-translate-y-1 shadow-2xl shadow-transparent rounded-[.3rem] px-4 py-3 min-w-[7rem] flex justify-center text-center transition-all duration-300;
   }
   /* 600018 */
   /* #260000 */

@@ -5,6 +5,7 @@ import {
   IoArrowForwardCircleOutline,
 } from "react-icons/io5";
 import { reviews } from "../../constant";
+import { CgProfile } from "react-icons/cg";
 
 const Testimonials = () => {
   const [sliderRef, instanceRef] = useKeenSlider(
@@ -93,18 +94,20 @@ const Testimonials = () => {
           {reviews.map((item) => (
             <div
               key={item.id}
-              className="keen-slider__slide min-h-[18rem] justify-between text-white p-7 bg-primarytextcolor rounded-xl flex flex-col gap-4"
+              className="keen-slider__slide min-h-[18rem] justify-between text-white p-7 bg-primary/90 rounded-xl flex flex-col gap-4"
             >
               <p className="italic desc">{item.desc}</p>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                   {/* <div className="h-[3rem] min-w-[3rem] bg-gray-300 rounded-full object-cover" /> */}
 
-                  <img
+                  {/* <img
                     src={item.profileImg}
                     alt={item.name}
                     className=" w-[3rem] h-[3rem] rounded-full object-cover"
-                  />
+                  /> */}
+                  <CgProfile className=" w-[3rem] h-[3rem] rounded-full text-white/80" />
+
                   <div className="flex flex-col h-full">
                     <p className="font-medium">{item.name}</p>
                     <p className="text-sm">{item.role}</p>
