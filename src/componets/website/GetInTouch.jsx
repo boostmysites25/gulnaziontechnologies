@@ -72,7 +72,7 @@ const GetInTouch = () => {
           />
         </div>
         <div className="flex flex-col h-full items-start gap-3">
-          <p className="gradient-text uppercase">Let's connect</p>
+           <div className="gradient-rounded-text-box">LET'S CONNECT</div>
           <div className="bg-gradient-to-b h-full text-white from-primary to-secondary rounded-2xl w-fit p-7">
             <h2 className="text-3xl font-medium">
               Connect With Our Team to Get Started!

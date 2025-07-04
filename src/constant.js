@@ -176,6 +176,7 @@ const ContactUs = lazy(() => import("./pages/website/ContactUs"));
 const AboutUs = lazy(() => import("./pages/website/AboutUs"));
 const BookConsultation = lazy(() => import("./pages/website/BookConsultation"));
 const Portfolio = lazy(() => import("./pages/website/Portfolio"));
+const PortfolioDetail = lazy(() => import("./pages/website/PortfolioDetail"));
 
 export {
   logoImg,
@@ -248,6 +249,12 @@ export const routes = [
     name: "Portfolio",
     path: "/portfolio",
     component: <Portfolio />,
+  },
+  {
+    name: "Portfolio Detail",
+    path: "/portfolio/:slug",
+    component: <PortfolioDetail />,
+    hideInNav: true,
   },
   {
     name: "Contact Us",
@@ -658,18 +665,21 @@ export const webPortfolio = [
     img: FiveGHomesImg,
     title: "5g Homes",
     link: "https://5ghighspeedinternet.co",
+    slug: "5g-homes",
   },
   {
     id: 3,
     img: ColdCreekcapImg,
     title: "Cold Creekcap",
     link: "https://www.coldcreekcap.com",
+    slug: "cold-creekcap",
   },
   {
     id: 9,
     img: ThinkRealityImg,
     title: "Think Reality",
     link: "https://thinkrealty.ae",
+    slug: "think-reality",
   },
   {
     id: 90,
@@ -745,24 +755,28 @@ export const appPortfolio = [
     img: AkashMegaMartApp,
     title: "Akash Mega Mart Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart",
+    slug: "akash-mega-mart",
   },
   {
     id: 2,
     img: FeelItMobileApp,
     title: "FeelIt Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app",
+    slug: "feelit",
   },
   {
     id: 3,
     img: KlikomicsMobileApp,
     title: "Klikomics Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.klikomics.android&pcampaignid=web_share",
+    slug: "klikomics",
   },
   {
     id: 4,
     img: AutoSnapMobileApp,
     title: "AutoSnap Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.Zigna.AutoSnap&pcampaignid=web_share",
+    slug: "autosnap",
   },
   {
     id: 8,
@@ -814,12 +828,14 @@ export const blockchainPortfolio = [
     img: nanoflow,
     title: "Nanoflow",
     link: "https://play.google.com/store/apps/details?id=com.nanfolo.user.app",
+    slug: "nanoflow",
   },
   {
     id: 2,
     img: padipal,
     title: "Padipal",
     link: "https://padiepal.com",
+    slug: "padipal",
   },
   {
     id: 3,
@@ -848,13 +864,26 @@ export const blockchainPortfolio = [
 ];
 
 export const ecommercePortfolio = [
-  { id: 1, img: Banjaaran, title: "Banjaaran", link: "https://banjaaran.in/" },
-  { id: 2, img: GullyLabs, title: "GullyLabs", link: "https://gullylabs.com/" },
+  { 
+    id: 1, 
+    img: Banjaaran, 
+    title: "Banjaaran", 
+    link: "https://banjaaran.in/",
+    slug: "banjaaran"
+  },
+  { 
+    id: 2, 
+    img: GullyLabs, 
+    title: "GullyLabs", 
+    link: "https://gullylabs.com/",
+    slug: "gully-labs"
+  },
   {
     id: 3,
     img: NickronIndia,
     title: "NickronIndia",
     link: "https://nickronindia.com/",
+    slug: "nickron-india"
   },
   {
     id: 3,

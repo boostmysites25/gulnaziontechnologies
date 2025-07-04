@@ -33,23 +33,22 @@ const WebsiteHeader = () => {
   return (
     <div
       className={`py-3 fixed backdrop-blur-md top-0 w-full z-50 text-white transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/20 text-white"
-          : "bg-black/20 text-white"
+        isScrolled ? "bg-white/20 text-white" : "bg-black/20 text-white"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
         <div className="flex justify-between items-center gap-20 w-full pl-[1rem] lg:pl-0">
-          <Link to="/">
+          <Link to="/" className="flex items-center gap-2 h-[3rem] md:h-[4rem]">
             <img
               src={logoImg}
               className="h-[3rem] md:h-[4rem] md:ml-5 scale-125"
               alt="logo"
             />
+            <span className="heading-3 !leading-tight font-medium text-lg text-black">Gulnazion Technologies</span>
           </Link>
           <div className="lg:flex mt-7 items-center gap-10 hidden">
-            {routes.map(({ name, path }) => (
-              name !== "Book Consultation" ? (
+            {routes.map(({ name, path, hideInNav }) =>
+              name !== "Book Consultation" && !hideInNav ? (
                 <Link
                   to={`${path}`}
                   className={`link text-sm ${
@@ -60,11 +59,8 @@ const WebsiteHeader = () => {
                   {name}
                 </Link>
               ) : null
-            ))}
-            <Link
-              to="/book-consultation"
-              className="primary-btn"
-            >
+            )}
+            <Link to="/book-consultation" className="primary-btn">
               Book Consultation
             </Link>
           </div>
@@ -84,7 +80,7 @@ const WebsiteHeader = () => {
             </button>
           </div>
           <div className="flex flex-col gap-6">
-            {routes.map(({ name, path }) => (
+            {routes.map(({ name, path }) =>
               name !== "Book Consultation" ? (
                 <Link
                   onClick={() => setIsOpen(false)}
@@ -95,7 +91,7 @@ const WebsiteHeader = () => {
                   {name}
                 </Link>
               ) : null
-            ))}
+            )}
             <Link
               onClick={() => setIsOpen(false)}
               to="/book-consultation"

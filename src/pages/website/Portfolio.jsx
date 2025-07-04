@@ -102,23 +102,34 @@ const Portfolio = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="small-heading text-black font-semibold text-lg  mb-2 ">
+                <h3 className="small-heading text-black font-semibold text-lg mb-2">
                   {project.title}
                 </h3>
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-orange-600 hover:text-orange-800 transition-colors"
-                  >
-                    View Project
-                  </a>
-                ) : (
-                  <span className="text-gray-500">
-                    Project Link Unavailable
-                  </span>
-                )}
+                <div className="flex justify-between items-center">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange-600 hover:text-orange-800 transition-colors"
+                    >
+                      View Live
+                    </a>
+                  ) : (
+                    <span className="text-gray-500">
+                      Live Link Unavailable
+                    </span>
+                  )}
+                  
+                  {project.slug && (
+                    <Link
+                      to={`/portfolio/${project.slug}`}
+                      className="text-primary hover:text-primary/80 transition-colors font-medium"
+                    >
+                      Case Study
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}

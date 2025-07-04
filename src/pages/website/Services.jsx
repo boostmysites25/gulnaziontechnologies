@@ -40,8 +40,6 @@ const Services = () => {
         </div>
       </div>
       <ServiceItems />
-      {/* <OurServices /> */}
-      <CommonProject />
       <UnlockEfficiency />
       <Testimonials />
     </>

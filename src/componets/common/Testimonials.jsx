@@ -83,7 +83,7 @@ const Testimonials = () => {
           data-aos-offset={-400}
           data-aos="fade-up"
         >
-          Our Clients' Experiences
+          Our Client's Experiences
         </h2>
         <div
           ref={sliderRef}
