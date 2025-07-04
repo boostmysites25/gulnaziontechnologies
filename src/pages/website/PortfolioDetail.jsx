@@ -3,11 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { portfolioDetails } from "../../data/portfolioDetails";
 import { IoIosArrowForward } from "react-icons/io";
 import banner from "../../assets/images/whyus2.jpg";
-import { FaCheck, FaLightbulb, FaRocket, FaCode, FaUsers, FaChartLine, FaTools, FaRegLightbulb } from "react-icons/fa";
+import { FaCheck, FaLightbulb, FaRocket, FaCode, FaUsers, FaChartLine, FaTools, FaRegLightbulb, FaImage } from "react-icons/fa";
 import { MdOutlineError, MdTimeline, MdOutlineDesignServices, MdOutlineIntegrationInstructions } from "react-icons/md";
 import { BsLightningChargeFill, BsStars } from "react-icons/bs";
 import { TbTargetArrow } from "react-icons/tb";
 import { GiAchievement } from "react-icons/gi";
+import { appPortfolio, webPortfolio, blockchainPortfolio, ecommercePortfolio, aiPortfolio, shopifyPortfolio } from "../../constant";
 
 const PortfolioDetail = () => {
   const { slug } = useParams();
@@ -17,7 +18,30 @@ const PortfolioDetail = () => {
   useEffect(() => {
     // Find the project with the matching slug
     const foundProject = portfolioDetails.find((item) => item.id === slug);
-    setProject(foundProject);
+    
+    // Find the portfolio image from the corresponding portfolio array
+    let portfolioImage = null;
+    
+    // Check in all portfolio arrays to find the matching image
+    const allPortfolios = [
+      { type: 'app', data: appPortfolio },
+      { type: 'web', data: webPortfolio },
+      { type: 'blockchain', data: blockchainPortfolio },
+      { type: 'ecommerce', data: ecommercePortfolio },
+      { type: 'ai', data: aiPortfolio },
+      { type: 'shopify', data: shopifyPortfolio }
+    ];
+    
+    for (const portfolio of allPortfolios) {
+      const matchingItem = portfolio.data.find(item => item.slug === slug);
+      if (matchingItem) {
+        portfolioImage = matchingItem.img;
+        break;
+      }
+    }
+    
+    // Set the project with the image
+    setProject(foundProject ? { ...foundProject, portfolioImage } : null);
     setLoading(false);
     
     // Scroll to top when component mounts
@@ -249,6 +273,67 @@ const PortfolioDetail = () => {
                 </p>
               </div>
             </div>
+
+            {/* Project Showcase - Futuristic Design */}
+            {project.portfolioImage && (
+              <div 
+                data-aos="fade-up"
+                className="mb-16"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaImage className="text-xl text-primary" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-800">Project Showcase</h2>
+                </div>
+                
+                <div className="bg-gradient-to-r p-8 rounded-2xl shadow-lg border border-blue-500/30 relative overflow-hidden min-h-[80vh]">
+                  {/* Decorative Elements */}
+                  {/* <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-purple-500"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-400"></div>
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div> */}
+                  
+                  {/* Grid Pattern Overlay */}
+                  {/* <div className="absolute inset-0 opacity-10" 
+                       style={{
+                         backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
+                         backgroundSize: '50px 50px'
+                       }}>
+                  </div> */}
+                  
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="relative group">
+                      {/* Main Image with Futuristic Frame */}
+                      <div className="p-2 bg-gradient-to-r  rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.5)] max-h-[60vh] overflow-hidden">
+                        <div className="bg-black p-1 rounded-md overflow-hidden">
+                          <img 
+                            src={project.portfolioImage} 
+                            alt={`${project.title} Project`}
+                            className="rounded max-h-[55vh] w-auto object-contain mx-auto"
+                          />
+                        </div>
+                      </div>
+                      
+                      {/* Animated Highlight Effect */}
+                      {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent -translate-x-full animate-shimmer rounded-lg"></div> */}
+                      
+                      {/* Project Info Overlay */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm p-4 rounded-md border border-blue-500/30 transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        <h3 className="text-blue-400 text-xl font-bold">{project.title}</h3>
+                        <p className="text-white/80 text-sm">{project.category} • {project.type.toUpperCase()} DEVELOPMENT</p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <p className="pt-6 text-black max-w-3xl">
+                        This {project.type} project for {project.title} showcases our commitment to delivering exceptional user experiences through innovative design and robust development practices.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Problem & Solution */}
             <div 
