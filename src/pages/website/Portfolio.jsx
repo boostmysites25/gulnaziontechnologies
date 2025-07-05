@@ -106,7 +106,7 @@ const Portfolio = () => {
                   {project.title}
                 </h3>
                 <div className="flex justify-between items-center">
-                  {project.link ? (
+                  {/* {project.link ? (
                     <a
                       href={project.link}
                       target="_blank"
@@ -119,7 +119,7 @@ const Portfolio = () => {
                     <span className="text-gray-500">
                       Live Link Unavailable
                     </span>
-                  )}
+                  )} */}
                   
                   {project.slug && (
                     <Link

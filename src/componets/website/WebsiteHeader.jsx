@@ -32,8 +32,8 @@ const WebsiteHeader = () => {
 
   return (
     <div
-      className={`py-3 fixed backdrop-blur-md top-0 w-full z-50 text-white transition-all duration-300 ${
-        isScrolled ? "bg-white/20 text-white" : "bg-black/20 text-white"
+      className={`py-3 fixed backdrop-blur-md top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/20 text-black" : "bg-black/20 text-white"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
@@ -44,7 +44,13 @@ const WebsiteHeader = () => {
               className="h-[3rem] md:h-[4rem] md:ml-5 scale-125"
               alt="logo"
             />
-            <span className="heading-3 !leading-tight font-medium text-lg text-black">Gulnazion Technologies</span>
+            <span
+              className={`${
+                isScrolled ? "text-black" : "text-white"
+              } heading-3 !leading-tight font-medium text-lg`}
+            >
+              Gulnazion Technologies
+            </span>
           </Link>
           <div className="lg:flex mt-7 items-center gap-10 hidden">
             {routes.map(({ name, path, hideInNav }) =>
