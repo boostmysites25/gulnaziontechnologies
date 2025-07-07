@@ -68,7 +68,7 @@ const Home = () => {
               <Link to="/contact-us" className="primary-btn mt-2">
                 Get Started
               </Link>
-              <Link to="/book-consultation" className="secondary-btn mt-2">
+              <Link to="/book-consultation" className="primary-btn mt-2">
                 Book a Consultation
               </Link>
             </div>

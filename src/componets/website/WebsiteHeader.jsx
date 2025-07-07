@@ -53,19 +53,21 @@ const WebsiteHeader = () => {
             </span>
           </Link>
           <div className="lg:flex mt-7 items-center gap-10 hidden">
-            {routes.map(({ name, path, hideInNav }) =>
-              name !== "Book Consultation" && !hideInNav ? (
-                <Link
-                  to={`${path}`}
-                  className={`link text-sm ${
-                    pathname === `${path}` && "active-link"
-                  }`}
-                  key={path}
-                >
-                  {name}
-                </Link>
-              ) : null
-            )}
+            {routes
+              .filter((route) => !route.path.includes(":"))
+              .map(({ name, path, hideInNav }) =>
+                name !== "Book Consultation" && !hideInNav ? (
+                  <Link
+                    to={`${path}`}
+                    className={`link text-sm ${
+                      pathname === `${path}` && "active-link"
+                    }`}
+                    key={path}
+                  >
+                    {name}
+                  </Link>
+                ) : null
+              )}
             <Link to="/book-consultation" className="primary-btn">
               Book Consultation
             </Link>
@@ -86,18 +88,20 @@ const WebsiteHeader = () => {
             </button>
           </div>
           <div className="flex flex-col gap-6">
-            {routes.map(({ name, path }) =>
-              name !== "Book Consultation" ? (
-                <Link
-                  onClick={() => setIsOpen(false)}
-                  key={path}
-                  className="text-3xl text-white font-medium transition-colors duration-300 link"
-                  to={path}
-                >
-                  {name}
-                </Link>
-              ) : null
-            )}
+            {routes
+              .filter((route) => !route.path.includes(":"))
+              .map(({ name, path }) =>
+                name !== "Book Consultation" ? (
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    key={path}
+                    className="text-3xl text-white font-medium transition-colors duration-300 link"
+                    to={path}
+                  >
+                    {name}
+                  </Link>
+                ) : null
+              )}
             <Link
               onClick={() => setIsOpen(false)}
               to="/book-consultation"

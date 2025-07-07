@@ -94,7 +94,14 @@ const Portfolio = () => {
           {getCurrentPortfolio().map((project) => (
             <div
               key={project.id}
-              className="bg-white  dark:bg-darkblack rounded-lg dark:hover:shadow-primary shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              onClick={() => {
+                if (project.slug) {
+                  window.location.href = `/portfolio/${project.slug}`;
+                }
+              }}
+              className={`${
+                project.slug ? "cursor-pointer" : ""
+              } bg-white dark:bg-darkblack rounded-lg dark:hover:shadow-primary shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl`}
             >
               <img
                 src={project.img}
@@ -120,7 +127,7 @@ const Portfolio = () => {
                       Live Link Unavailable
                     </span>
                   )} */}
-                  
+
                   {project.slug && (
                     <Link
                       to={`/portfolio/${project.slug}`}
