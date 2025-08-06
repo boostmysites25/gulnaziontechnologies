@@ -42,6 +42,26 @@ const Portfolio = () => {
     }
   };
 
+  // Function to get category based on portfolio type
+  const getCategory = (portfolioType) => {
+    switch (portfolioType) {
+      case "web":
+        return "Corporate Website";
+      case "app":
+        return "Mobile App";
+      case "blockchain":
+        return "Blockchain";
+      case "ecommerce":
+        return "Ecommerce";
+      case "aiProject":
+        return "AI Project";
+      case "shopifyPortfolio":
+        return "Shopify";
+      default:
+        return "Web Project";
+    }
+  };
+
   return (
     <div className="">
       <div
@@ -90,7 +110,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-[4rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 pb-[4rem]">
           {getCurrentPortfolio().map((project) => (
             <div
               key={project.id}
@@ -101,37 +121,53 @@ const Portfolio = () => {
               }}
               className={`${
                 project.slug ? "cursor-pointer" : ""
-              } bg-white dark:bg-darkblack rounded-lg dark:hover:shadow-primary shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl`}
+              } bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl`}
             >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              {/* Image Section - Light Gray Placeholder */}
+              <div className="h-48 bg-gray-200 flex items-center justify-center relative">
+                {project.img ? (
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-gray-400">
+                    <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center mb-2">
+                      <svg className="w-8 h-8 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-sm">Image Placeholder</span>
+                  </div>
+                )}
+              </div>
+              
+              {/* Content Section */}
               <div className="p-4">
-                <h3 className="small-heading text-black font-semibold text-lg mb-2">
+                {/* Category Tag */}
+                <div className="mb-2">
+                  <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-md">
+                    {getCategory(activePortfolio)}
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className="font-bold text-gray-800 text-lg mb-2">
                   {project.title}
                 </h3>
+                
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                  {project.description}
+                </p>
+                
+                {/* Action Link */}
                 <div className="flex justify-between items-center">
-                  {/* {project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-orange-600 hover:text-orange-800 transition-colors"
-                    >
-                      View Live
-                    </a>
-                  ) : (
-                    <span className="text-gray-500">
-                      Live Link Unavailable
-                    </span>
-                  )} */}
-
                   {project.slug && (
                     <Link
                       to={`/portfolio/${project.slug}`}
-                      className="text-primary hover:text-primary/80 transition-colors font-medium"
+                      className="text-primary hover:text-primary/80 transition-colors font-medium text-sm"
                     >
                       Case Study
                     </Link>

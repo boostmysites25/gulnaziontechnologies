@@ -176,7 +176,6 @@ const ContactUs = lazy(() => import("./pages/website/ContactUs"));
 const AboutUs = lazy(() => import("./pages/website/AboutUs"));
 const BookConsultation = lazy(() => import("./pages/website/BookConsultation"));
 const Portfolio = lazy(() => import("./pages/website/Portfolio"));
-const PortfolioDetail = lazy(() => import("./pages/website/PortfolioDetail"));
 
 export {
   logoImg,
@@ -250,12 +249,7 @@ export const routes = [
     path: "/portfolio",
     component: <Portfolio />,
   },
-  {
-    name: "Portfolio Detail",
-    path: "/portfolio/:slug",
-    component: <PortfolioDetail />,
-    hideInNav: true,
-  },
+
   {
     name: "Contact Us",
     path: "/contact-us",
@@ -525,30 +519,23 @@ export const reviews = [
   {
     id: 1,
     profileImg: profileImg1,
-    name: "Aamir Qureshi",
-    role: "Client",
-    desc: "“I took a custom software development service from Gulnazion Technologies, and the experience was awesome! Their team was very helpful and professional throughout the process. The quality of the product delivered was excellent, and everything was done as per the requirements. I'm really happy with their service and would definitely recommend them to anyone looking for reliable software development.”",
+    name: "Sandhya Soni",
+    role: "CEO, TechStart Inc.",
+    desc: "Your work ethic and dedication to the company's mission are truly inspiring. The team delivered exceptional results that exceeded our expectations.",
   },
   {
     id: 2,
     profileImg: profileImg1,
-    name: "Yugank Nagar",
-    role: "Client",
-    desc: "“I recently worked with Gulnazion Technologies for a custom software development project, and I must say — they did an amazing job! The team was super helpful, easy to communicate with, and very professional. The final product was top-notch. Highly recommend their services!”",
+    name: "Aamir Qureshi",
+    role: "CTO, InnovateCorp",
+    desc: "I took a custom software development service from Gulnazion Technologies, and the experience was awesome! Their team was very helpful and professional throughout the process. The quality of the product delivered was excellent, and everything was done as per the requirements. I'm really happy with their service and would definitely recommend them to anyone looking for reliable software development.",
   },
   {
     id: 3,
     profileImg: profileImg1,
-    name: "Ayush Goswami",
-    role: "Client",
-    desc: "“Trusted IT service provider. Great experience with website and software projects.”",
-  },
-  {
-    id: 4,
-    profileImg: profileImg1,
-    name: "Sandhya Soni",
-    role: "Client",
-    desc: "“Your work ethic and dedication to the company's mission are truly inspiring.”",
+    name: "Priya Sharma",
+    role: "Founder, Digital Solutions",
+    desc: "Outstanding service and support. The team at Gulnazion Technologies transformed our digital presence completely. Their expertise in modern technologies is remarkable.",
   },
 ];
 
@@ -864,26 +851,26 @@ export const blockchainPortfolio = [
 ];
 
 export const ecommercePortfolio = [
-  { 
-    id: 1, 
-    img: Banjaaran, 
-    title: "Banjaaran", 
+  {
+    id: 1,
+    img: Banjaaran,
+    title: "Banjaaran",
     link: "https://banjaaran.in/",
-    slug: "banjaaran"
+    slug: "banjaaran",
   },
-  { 
-    id: 2, 
-    img: GullyLabs, 
-    title: "GullyLabs", 
+  {
+    id: 2,
+    img: GullyLabs,
+    title: "GullyLabs",
     link: "https://gullylabs.com/",
-    slug: "gully-labs"
+    slug: "gully-labs",
   },
   {
     id: 3,
     img: NickronIndia,
     title: "NickronIndia",
     link: "https://nickronindia.com/",
-    slug: "nickron-india"
+    slug: "nickron-india",
   },
   {
     id: 3,

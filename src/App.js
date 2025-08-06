@@ -18,6 +18,7 @@ import { Toaster } from "react-hot-toast";
 const ServicePageLayout = lazy(() => import("./layout/ServicePageLayout"));
 const ServiceDetails = lazy(() => import("./pages/website/ServiceDetails"));
 const Thankyou = lazy(() => import("./pages/ThankYou"));
+const PortfolioDetail = lazy(() => import("./pages/website/PortfolioDetail"));
 
 AOS.init({
   once: true,
@@ -58,6 +59,16 @@ export default function App() {
           ))}
 
           <Route path="/thank-you" element={<Thankyou />} />
+          <Route
+            path="/portfolio/:slug"
+            element={
+              <>
+                <WebsiteHeader />
+                <PortfolioDetail />
+                <WebsiteFooter />
+              </>
+            }
+          />
 
           <Route path="/services" element={<ServicePageLayout />}>
             <Route path=":title" element={<ServiceDetails />} />

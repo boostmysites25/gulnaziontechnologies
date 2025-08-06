@@ -5,18 +5,24 @@ import {
   IoArrowForwardCircleOutline,
 } from "react-icons/io5";
 import { reviews } from "../../constant";
-import { CgProfile } from "react-icons/cg";
+import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       loop: true,
       slides: {
-        perView: 2,
+        perView: 3,
         spacing: 20,
       },
       breakpoints: {
         "(max-width: 1024px)": {
+          slides: {
+            perView: 2,
+            spacing: 20,
+          },
+        },
+        "(max-width: 768px)": {
           slides: {
             perView: 1,
             spacing: 20,
@@ -68,8 +74,18 @@ const Testimonials = () => {
       instanceRef.current.prev(); // Move to the prev slide
     }
   };
+
+  // Function to get initials from name
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase();
+  };
+
   return (
-    <div className="py-[3rem]">
+    <div className="py-[3rem] bg-gray-50">
       <div className="wrapper flex flex-col items-center gap-7">
         <div
           className="gradient-rounded-text-box"
@@ -94,24 +110,30 @@ const Testimonials = () => {
           {reviews.map((item) => (
             <div
               key={item.id}
-              className="keen-slider__slide min-h-[18rem] justify-between text-white p-7 bg-primary/90 rounded-xl flex flex-col gap-4"
+              className="keen-slider__slide bg-white rounded-xl p-6 flex flex-col gap-4 min-h-[280px]"
             >
-              <p className="italic desc">{item.desc}</p>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  {/* <div className="h-[3rem] min-w-[3rem] bg-gray-300 rounded-full object-cover" /> */}
-
-                  {/* <img
-                    src={item.profileImg}
-                    alt={item.name}
-                    className=" w-[3rem] h-[3rem] rounded-full object-cover"
-                  /> */}
-                  <CgProfile className=" w-[3rem] h-[3rem] rounded-full text-white/80" />
-
-                  <div className="flex flex-col h-full">
-                    <p className="font-medium">{item.name}</p>
-                    <p className="text-sm">{item.role}</p>
-                  </div>
+              {/* Star Rating */}
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} className="text-yellow-400 text-lg" />
+                ))}
+              </div>
+              
+              {/* Testimonial Text */}
+              <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                {item.desc}
+              </p>
+              
+              {/* Reviewer Info */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">
+                    {getInitials(item.name)}
+                  </span>
+                </div>
+                <div className="flex flex-col">
+                  <p className="font-semibold text-gray-800 text-sm">{item.name}</p>
+                  <p className="text-gray-600 text-xs">{item.role}</p>
                 </div>
               </div>
             </div>
@@ -119,7 +141,6 @@ const Testimonials = () => {
         </div>
 
         <div
-          // data-aos="fade-up"
           className="flex justify-center items-center gap-10 mt-2"
         >
           <button
